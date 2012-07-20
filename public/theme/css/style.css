@@ -1,0 +1,530 @@
+/* CSS Document */
+html, body, img, div, a, span, p { margin:0; padding:0; }
+html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
+html { 
+
+}
+
+h1, h2, h3, h4, h5, h6 { padding:0; margin:0; font-weight:normal;  }
+
+h1 {
+	font-size: 24px;
+	color:#3485c3;
+	margin: 0 0 15px 0;	
+}
+
+a {outline:none; color:#000000;}
+img {border:none;}
+
+.header { 
+	position:absolute; 
+	width:100%; 
+	height:149px; 
+	left:0;
+	z-index:0;
+	padding:0 0 31px 0;
+	background: url(/theme/img/header_bg.png) bottom left repeat-x;
+}
+.header_resize { 
+	width:1000px; 
+	height:149px; 
+	margin:0 auto;
+	z-index:0;
+}
+
+.header_resize .logo {
+	float:left;
+	width:298px;
+	height:55px;
+	display: block;
+	margin:27px 65px 30px 0;	
+	background: url(/theme/img/logo.png) top left no-repeat;
+
+}
+
+/*  ����� �����  */
+.header_resize .languageSelect {
+	float:left;
+	width:210px;
+	height:72px;
+	margin:18px 6px 22px 0;
+	background: url(/theme/img/lang_select_bg.png) top left no-repeat;
+}
+
+.header_resize .languageSelect .container {
+	margin:12px auto;
+	width:170px;
+}
+
+.header_resize .languageSelect .container .title {
+	font-weight:bold;
+	margin:0 0 5px 0;
+	color:#373737;
+}
+
+.header_resize .languageSelect .container .flags {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.header_resize .languageSelect .container .flags li {
+	margin:0;
+	padding:0;
+	width:24px;
+	height:16px;
+	float:left;
+	margin:0 12px 0 0; 
+}
+
+.header_resize .languageSelect .container .flags li a.langEN {
+	display:block;
+	width:24px;
+	height:16px;
+	background: url(/theme/img/langs/en.png) top left no-repeat;
+	border:2px solid #b8b8b8;
+}
+
+.header_resize .languageSelect .container .flags li a.langDE {
+	display:block;
+	width:24px;
+	height:16px;
+	background: url(/theme/img/langs/de.png) top left no-repeat;
+	border:2px solid #b8b8b8;
+}
+
+.header_resize .languageSelect .container .flags li a.langRU {
+	display:block;
+	width:24px;
+	height:16px;
+	background: url(/theme/img/langs/ru.png) top left no-repeat;
+	border:2px solid #b8b8b8;
+}
+
+.header_resize .languageSelect .container .flags li a.active {
+	border:2px solid #268608;	
+}
+/*---------------*/
+
+
+/*  ����� ��������  */
+.header_resize .sitesSelect {
+	float:left;
+	width:420px;
+	height:72px;
+	margin:18px 0 22px 0;
+	background: url(/theme/img/sites_select_bg.png) top left no-repeat;
+}
+
+.header_resize .sitesSelect .container {
+	margin:12px 25px;
+	width:170px;
+}
+
+.header_resize .sitesSelect .container .title {
+	font-weight:bold;
+	margin:0 0 5px 0;
+	color:#373737;
+}
+
+.header_resize .sitesSelect .container .sites {
+	width:370px;
+}
+
+/*-----------------*/
+
+.header_resize .mainMenu {
+	height:37px;
+	width:1000px;
+}
+
+.header_resize .mainMenu a.menuItem:link,
+.header_resize .mainMenu a.menuItem:visited {
+	display:block;
+	height:27px;
+	padding:10px 19px 0 19px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#0c6db7;
+	margin:0 5px 0 0;
+	background: url(/theme/img/mainmenu/top_inactive_bg.png) bottom left repeat-x;
+}
+
+.header_resize .mainMenu a.menuItem:hover,
+.header_resize .mainMenu a.menuItem_active {
+	display:block;
+	height:27px;
+	padding:10px 19px 0 19px;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	color:white;
+	margin:0 5px 0 0;
+	background:#0c6db7;
+	text-decoration:none;
+}
+
+.footer { 
+	width:100%; 
+	height:120px; 
+	margin-top:-165px;
+	padding:45px 0 0 0;
+	background: url(/theme/img/footer_bg.png) top left repeat-x;
+}
+.footer_resize { 
+	width:1000px; 
+	margin:0 auto; 
+	height:120px; 
+	overflow: hidden;
+}
+
+.footer_resize .footerText {
+	float:left;
+	width:330px;
+	margin:20px 29px 15px 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3485c3;	
+}
+
+.footer_resize .bottomMenu	{
+	float:right;
+	width:625px;
+	margin:20px 15px 15px 0;
+}
+
+.footer_resize .bottomMenu	.menuItem,
+.footer_resize .bottomMenu span {
+	display:block;
+	float:left;
+	font-weight:bold;
+	color:#4d4d4d;
+	margin:0 10px 0 0;
+	text-decoration:none;
+}
+
+.footer_resize .footerCounters {
+	width:1000px;	
+}
+
+.push1 { 
+	height:190px;
+}
+.push2 { 
+	height:165px;
+}
+.clear { clear:both;}
+
+.body {
+	width:1000px;
+	height:auto !important;
+	height:100%;
+	min-height:100%;
+	margin:0 auto;
+}
+
+.directivesSlider {
+	width: 1000px;
+	height: 257px;
+	margin: 0 0 25px 0;
+}
+.directivesSlider dl {
+	width: 1000px;
+	height: 257px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+.directivesSlider dl dt {
+	float: left;
+	width: 29px;
+	height: 257px;
+	overflow: hidden;	
+	margin: 0;
+	padding: 0;
+}
+.directivesSlider dl dt .border-padding {
+	width: 25px;
+	height: 253px;
+	color: #fff;
+	border: 2px solid #0c6db7;
+	background: url("/theme/img/directions_line.png") repeat-y left #0c6db7;
+	position: relative;
+}
+.directivesSlider dl dt .background {
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	height: 225px;
+	width: 22px;
+	overflow: hidden;
+}
+.directivesSlider dl dd {
+	float: left;
+	width: 0;
+	height: 257px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	color: #4a4a4a;
+	background: #fff;
+	font-weight: 600;
+	font-size: 12px;
+}
+.directivesSlider dl dd.active {
+	float: left;
+	width: 845px;
+	height: 257px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+.directivesSlider dl .fix-width {
+	width: 831px;
+	height: 255px;
+	overflow: hidden;
+	padding-left: 13px;
+	background: url("/theme/img/directions_arr.png") no-repeat left;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+	border-color: #cecece;
+}
+.directivesSlider dl dd .direction-image {
+	background-position: top right;
+	background-repeat: no-repeat;
+	height: 255px;
+	overflow: hidden;
+}
+.directivesSlider dl dd .directions_fade {
+	height: 240px;
+	width: 410px;
+	padding: 15px 96px 0 20px;
+	overflow: hidden;
+	background: url("/theme/img/directions_fade.png") repeat-y left;
+}
+.directivesSlider dl dd h2 {
+	color: #0c6db7;
+	margin: 0 0 10px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.indexLeftColumn {
+	float: left;
+	width:330px;
+	margin:0 29px 0 0;
+}
+
+.indexLeftColumn .indexNews {
+	width:298px;
+	border:1px solid #0e6eb8;
+	background: url(/theme/img/index_news_bg.png) top left repeat-x #f4f6f7;
+	margin:0 0 25px 0;
+	padding: 15px;
+}
+
+.indexLeftColumn .indexNews .title {
+	float:left;
+	padding:0 0 0 26px;
+	margin:0 10px 15px 0;
+	background: url(/theme/img/left_title_bg.png) center left no-repeat;
+	font-size:18px;
+	color:#3485c3;
+	font-weight:bold;
+	
+}
+
+.indexLeftColumn .indexNews .moreLink {
+	float: right;
+	display:block;
+	width:91px;
+	height:20px;
+	background: url(/theme/img/buttons_bg/blue_button.png) top left no-repeat;
+	color:white;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:2px 0 0 10px;
+}
+
+.indexLeftColumn .indexNews .itemContainer {
+	width:298px;
+	margin:0 0 10px 0;
+}
+
+.indexLeftColumn .indexNews .newsDelimiter {
+	background:#0c6db7;
+	width:298px;
+	height:2px;
+	margin:0 0 15px 0;
+}
+
+.indexLeftColumn .indexNews .itemContainer .image {
+	width:100px;
+	height:100px;
+	float:left;
+	border:1px solid #0e6eb8;
+	margin:3px 15px 10px 0;
+}
+
+.indexLeftColumn .indexNews .itemContainer .text {
+	float: left;
+	width: 175px;
+}
+
+.indexLeftColumn .indexNews .itemContainer .text .textTitle {
+	font-weight:bold;
+	display: block;
+	color:#3485c3;
+	margin:0 0 5px 0;
+}
+
+.indexLeftColumn .indexNews .itemContainer .text .textTitle a {
+	font-weight:bold;
+	color:#3485c3;
+}
+
+.indexLeftColumn .indexNews .itemContainer .text .textBody {}
+
+.newsItemContainer {}
+.newsItemContainer .image {
+	width:100px;
+	height:100px;
+	float:left;
+	border:1px solid #0e6eb8;
+	margin:3px 15px 10px 0;
+}
+.newsItemContainer .text {
+	float: left;
+	width: 510px;
+}
+.newsItemContainer .text .textTitle {
+	font-weight:bold;
+	display: block;
+	color:#3485c3;
+	margin:0 0 5px 0;
+	color:#3485c3;
+	font-size:14px;
+}
+.newsItemContainer .text .textTitle a {
+	color:#3485c3;
+}
+.directivesItemContainer .image {
+	width:300px;
+	float:left;
+	border:0px;
+	margin:3px 15px 10px 0;
+}
+.directivesItemContainer .text {
+	float: left;
+	width: 310px;
+}
+.directivesItemContainer .text .textTitle {
+	font-weight:bold;
+	display: block;
+	color:#3485c3;
+	margin:0 0 5px 0;
+	color:#3485c3;
+	font-size:14px;
+}
+.indexLeftColumn .indexVacancies {
+	width:298px;
+	border:1px solid #d1d1d1;
+	margin:0 0 25px 0;
+	padding: 15px;
+}
+
+.indexLeftColumn .indexVacancies .title {
+	float:left;
+	padding:0 0 0 26px;
+	margin:0 10px 15px 0;
+	background: url(/theme/img/left_title_bg.png) center left no-repeat;
+	font-size:18px;
+	color:#3485c3;
+	font-weight:bold;
+	
+}
+
+.indexLeftColumn .indexVacancies .moreLink {
+	float: right;
+	display:block;
+	width:91px;
+	height:20px;
+	background: url(/theme/img/buttons_bg/blue_button.png) top left no-repeat;
+	color:white;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:2px 0 0 10px;
+}
+
+.indexLeftColumn .indexVacancies .girl {
+	width:298px;
+	height:198px;
+	background: url(/theme/img/vacancies_baba.png) top left no-repeat;
+	margin:0 0 15px 0;
+}
+
+.indexLeftColumn .indexVacancies .itemContainer {
+	width:298px;
+	margin:0 0 10px 0;
+}
+
+.indexLeftColumn .indexVacancies .itemContainer .itemTitle {
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	color:#363636;
+	padding:0 0 0 15px;
+	background: url(/theme/img/vacancies_item_title_bg.png) center left no-repeat;
+	margin:0 0 5px 0;
+}
+
+.indexLeftColumn .indexVacancies .itemContainer .direction {
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	color:#3485c3;
+	margin:0 0 5px 0;
+}
+
+.indexLeftColumn .indexVacancies .itemContainer .text {}
+
+.indexLeftColumn .indexVacancies .vacanciesDelimiter {
+	background:#e1e1e1;
+	width:298px;
+	height:2px;
+	margin:0 0 15px 0;
+}
+
+.indexRightColumn {
+	float:right;
+	width:640px;
+}
+
+.indexRightColumn .indexSeo {
+	margin: 0 0 25px 0;
+	color:#242424;
+}
+
+.indexRightColumn .indexSeo h1 {
+	font-size: 24px;
+	color:#3485c3;
+	margin: 0 0 15px 0;	
+}
+
+.indexRightColumn .indexPartners {
+	margin: 0 0 25px 0;
+	color:#242424;
+}
+
+.indexRightColumn .indexPartners h2 {
+	margin: 0 0 15px 0;
+	font-size: 18px;
+	color:#3485c3;
+}
+
+.indexRightColumn .partnersContainer img {
+	margin:0 10px 20px 0;
+}

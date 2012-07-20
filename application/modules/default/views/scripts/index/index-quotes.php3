@@ -1,0 +1,3 @@
+<?php //http://wffw.info/informers/marketdatasettings.php ?>
+
+<iframe src="http://wffw.info/informers/marketdata.php?logo=&bg=ffffff&bgfirst=ebf1f5&bggrp=ffffff&cgrp=000000&bgsecond=ffffff&percent=1&bghdr=ffffff&ffirst=000000&fsecond=000000&chdr=000000&q[metalls]=4,5,6&q[valutes]=0,1,4,11,46&q[index]=0,1,2,5,6,7,8,9,10&bcsp=2&refresh=10&fsize=10&fface=Verdana&quote=Quotes&bid=Bid&ask=Ask&last=Last" width="330" height="500" frameborder="0" scrolling="no"></iframe>

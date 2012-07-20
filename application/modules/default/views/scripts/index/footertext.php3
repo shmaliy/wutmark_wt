@@ -1,0 +1,1 @@
+<div class="footerText">(c) WUTMARC LTD, 2003</div>
