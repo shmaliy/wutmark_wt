@@ -107,8 +107,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         	'([^.]+)+\/([^.]+).html',
         	array(
 	            'module' => 'content',
-	    	   	'controller' => 'index',
-	    	   	'action'     => 'static',
+	    	   	'controller' => 'new-index',
+	    	   	'action'     => 'static-content-item',
 				'lang' => $lang
             )
         );
