@@ -1,5 +1,5 @@
 <?php
-class Content_Model_FrontendModel extends Application_Model_ModelAbstract
+class Content_Model_FrontendModel extends My_Model_Abstract
 {
 	
 	public function __construct()
@@ -8,7 +8,7 @@ class Content_Model_FrontendModel extends Application_Model_ModelAbstract
 		parent::__construct();
 	}
 	
-	public function getDefaultContentItem($alias = null)
+	public function getStaticContentItem($alias = null)
 	{
 		if (is_null($alias)) {
 			return array();
@@ -28,7 +28,7 @@ class Content_Model_FrontendModel extends Application_Model_ModelAbstract
 	
 	public function getMenuItems()
 	{
-		return $this->_getMenuTreeSorted('ordering');
+		return $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias('mainmenu'));
 	}
 	
 	public function getCategoriesItems()

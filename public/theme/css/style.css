@@ -1,4 +1,9 @@
 /* CSS Document */
+
+@import "/theme/css/frontend-menu.css" screen; /* Стиль для блоков меню */
+@import "/theme/css/frontend-static.css" screen; /* Стиль для стфтического контента */
+@import "/theme/css/frontend-index.css" screen; /* Стиль для стфтического контента */
+
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
 html { 
@@ -133,37 +138,7 @@ img {border:none;}
 
 /*-----------------*/
 
-.header_resize .mainMenu {
-	height:37px;
-	width:1000px;
-}
 
-.header_resize .mainMenu a.menuItem:link,
-.header_resize .mainMenu a.menuItem:visited {
-	display:block;
-	height:27px;
-	padding:10px 19px 0 19px;
-	float:left;
-	font-size:14px;
-	font-weight:bold;
-	color:#0c6db7;
-	margin:0 5px 0 0;
-	background: url(/theme/img/mainmenu/top_inactive_bg.png) bottom left repeat-x;
-}
-
-.header_resize .mainMenu a.menuItem:hover,
-.header_resize .mainMenu a.menuItem_active {
-	display:block;
-	height:27px;
-	padding:10px 19px 0 19px;
-	float:left;
-	font-size:14px;
-	font-weight:bold;
-	color:white;
-	margin:0 5px 0 0;
-	background:#0c6db7;
-	text-decoration:none;
-}
 
 .footer { 
 	width:100%; 
@@ -188,21 +163,6 @@ img {border:none;}
 	color: #3485c3;	
 }
 
-.footer_resize .bottomMenu	{
-	float:right;
-	width:625px;
-	margin:20px 15px 15px 0;
-}
-
-.footer_resize .bottomMenu	.menuItem,
-.footer_resize .bottomMenu span {
-	display:block;
-	float:left;
-	font-weight:bold;
-	color:#4d4d4d;
-	margin:0 10px 0 0;
-	text-decoration:none;
-}
 
 .footer_resize .footerCounters {
 	width:1000px;	

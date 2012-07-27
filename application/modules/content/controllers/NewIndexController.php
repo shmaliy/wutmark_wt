@@ -21,8 +21,9 @@ class Content_NewIndexController extends Zend_Controller_Action
 		$request = $this->getRequest();
 		$params = $request->getParams();
 		
-		$this->helper->arrayTrans($this->_model->getMenuItems());
+		$item = $this->_model->getStaticContentItem($params[2]);
+		$this->view->item = $item;
 		
-		$this->helper->arrayTrans($this->_model->getDefaultContentItem($params[2]));
+		//$this->helper->arrayTrans($item);
 	}
 }

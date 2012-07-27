@@ -2,17 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php $this->headTitle('Wutmarc')->setSeparator(' | '); ?>
-<?php $this->headScript()->appendFile("/js/prototype/prototype.js"); ?>
-<?php $this->headScript()->appendFile("/js/scriptaculous/scriptaculous.js"); ?>
-<?php $this->headScript()->appendFile("/cms/js/tiny_mce/tiny_mce.js"); ?>
-<?php $this->headScript()->appendFile("/js/tiny_mce_init.js"); ?>
-<?php $this->headScript()->appendFile("/js/swfupload/swfupload.js"); ?>
-<?php $this->headScript()->appendFile("/js/swfupload/js/swfupload.queue.js"); ?>
-<?php $this->headScript()->appendFile("/js/swfupload/js/fileprogress.js"); ?>
-<?php $this->headScript()->appendFile("/js/swfupload/js/handlers.js"); ?>
-<?php $this->headScript()->appendFile("/js/lightbox2/js/lightbox.js"); ?>
-<?php $this->headScript()->appendFile("/js/Prototype.UI.Accordion.js"); ?>
-<?php $this->headLink()->appendStylesheet('/js/lightbox2/css/lightbox.css'); ?>
+
 <?php $this->headLink()->appendStylesheet('/theme/css/style.css')
 					   ->appendStylesheet('/theme/css/swf.css')
 					   ->headLink(array('rel' => 'favicon', 'href' => '/favicon.png'), 'PREPEND'); ?>
@@ -26,8 +16,20 @@
 ?>
 <?php echo $this->headMeta();?>
 <?php echo $this->headTitle(); ?>
-<?php echo $this->headScript(); ?>
 <?php echo $this->headLink(); ?>
+
+<?php
+	$this->headScript()->appendFile('/js/jquery/jquery-1.7.2.min.js');
+	$this->headScript()->appendFile('/js/jquery/jquery-ui-1.8.20.custom/jquery-ui-1.8.20.custom.min.js');
+	$this->headScript()->appendFile('/js/jquery/jquery.jqGrid-4.3.3/i18n/grid.locale-ru.js');
+	$this->headScript()->appendFile('/js/jquery/jquery.swfupload/swfupload.js');
+	$this->headScript()->appendFile('/js/jquery/jquery.swfupload.js');
+	$this->headScript()->appendFile('/js/project_frontend.js');
+	$this->headScript()->appendFile('/js/script.js');
+	$this->headScript()->appendFile('/js/index.js');
+	$this->headScript()->appendFile('/js/content.js');
+	echo $this->headScript();
+?>
 
 </head>
 <body>
@@ -37,7 +39,7 @@
     	<?php echo $this->action('langselector', 'index', 'default'); ?>
     	<?php echo $this->action('sitesselector', 'index', 'default'); ?>
     	<div class="clear"></div>
-    	<?php echo $this->action('index', 'index', 'menu'); ?>
+    	<?php echo $this->action('top-menu', 'index', 'menu', array('rootAlias' => 'mainmenu')); ?>
     </div>
 </div>
 <div class="body">
@@ -48,7 +50,7 @@
 <div class="footer">
 	<div class="footer_resize">
 		<?php echo $this->action('footertext', 'index', 'default'); ?>
-		<?php echo $this->action('bottom', 'index', 'menu'); ?>
+		<?php echo $this->action('bottom-menu', 'index', 'menu', array('rootAlias' => 'mainmenu')); ?>
 		<div class="clear"></div>
 		<?php echo $this->action('footercounters', 'index', 'default'); ?>
 	</div>
