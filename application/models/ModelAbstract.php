@@ -357,12 +357,16 @@ class Application_Model_ModelAbstract
     protected function _getMenuTree($items, $parent = 0)
     {
     	$tree = array();
+    	//$hasCurrent = false;
     	foreach ($items as &$item) {
     		if($item['parent_id'] == $parent) {
     			$item['title'] = $this->getCurrentMenuItemTitle($item['title']);
     			$item['link'] = str_replace(':lang:', $this->_lang, $item['link']);
-    			$item['current'] = $this->_checkCurrentMenuItem($item['link']);
+    			
     			$item['childs'] = $this->_getMenuTree($items, $item['id']);
+    			
+    			$item['current'] = $this->_checkCurrentMenuItem($item['link']);
+    			//$hasCurrent = true;
     			$tree[] = $item;
     		} 
     	}
