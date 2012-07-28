@@ -36,6 +36,11 @@ class IndexController extends Zend_Controller_Action
     	$params = $request->getParams();
     }
     
+    public function flashPresentationAction()
+    {
+    	$this->view->lang = $this->_model->getLang();
+    }
+    
     public function seoAction()
     {
     	$request = $this->getRequest();
