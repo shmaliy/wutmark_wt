@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+.cache-manager-container {
+	
+}
+
+.cache-manager-container .status {
+	font-size:16px;
+	font-weight:bold;
+	margin:0 0 25px 0;
+}
+
+.cache-manager-container .status span {
+	color:#ff6600;
+}
+
+.cache-manager-container .auth-error {
+	color:red;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.cache-manager-container ul {
+	list-style:none;	
+	margin:0 0 25px 0;
+	padding:0;
+	display:block;
+}
+
+.cache-manager-container ul li {
+	float: left;
+	display:block;
+	margin:0 15px 0 0px;
+}
+
+.cache-manager-container ul li.title {
+	color:green;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.cache-manager-container .modes-returns {
+	color:red;
+	font-size:18px;
+	font-weight:bold;
+}

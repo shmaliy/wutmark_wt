@@ -64,6 +64,35 @@ class IndexController extends Zend_Controller_Action
     	$request = $this->getRequest();
     	$params = $request->getParams();
     }
+    
+    public function cacheManagerAction()
+    {
+    	$request = $this->getRequest();
+    	$params = $request->getParams();
+    	
+    	$this->view->authorized = 0;
+    	if ($_SESSION['cms']['authorized'] == '1') {
+    		
+    		$this->view->authorized = 1;
+    		
+	    	if (isset($params['mode'])) {
+
+	    		if($params['mode'] == 'on') {
+	    			$this->view->enable = $this->_model->enableCache();
+	    		}
+	    		
+	    		if($params['mode'] == 'off') {
+	    			$this->view->disable = $this->_model->disableCache();
+	    		}
+	    		
+	    		if($params['mode'] == 'clear') {
+	    			$this->view->clear = $this->_model->clearCache();
+	    		}
+	    	}
+	    	$this->view->status = $this->_model->getCache();
+    	
+    	}
+    }
 }
 
 

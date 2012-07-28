@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-//session_start();
+session_start();
 
 /* Корневой каталог */
 if (!defined('ROOT_PATH')) {
@@ -45,6 +45,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
 
 include('my_helpers.php');
 include('renamer.php');
+
 
 /** Подключение Zend_Application */
 require_once 'Zend/Application.php';

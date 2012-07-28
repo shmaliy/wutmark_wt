@@ -1,8 +1,9 @@
 /* CSS Document */
 
 @import "/theme/css/frontend-menu.css" screen; /* Стиль для блоков меню */
-@import "/theme/css/frontend-static.css" screen; /* Стиль для стфтического контента */
-@import "/theme/css/frontend-index.css" screen; /* Стиль для стфтического контента */
+@import "/theme/css/frontend-static.css" screen; /* Стиль для статического контента */
+@import "/theme/css/frontend-index.css" screen; /* Стиль для главной страницы */
+@import "/theme/css/cache-manager.css" screen; /* Стиль для менеджера кеширования */
 
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
@@ -184,91 +185,30 @@ img {border:none;}
 	margin:0 auto;
 }
 
-.directivesSlider {
-	width: 1000px;
-	height: 257px;
-	margin: 0 0 25px 0;
+
+.flash-presentation {
+	width:1000px;
+	height: 250px;
+	margin:-39px 0 25px 0;
 }
-.directivesSlider dl {
-	width: 1000px;
-	height: 257px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
-.directivesSlider dl dt {
-	float: left;
-	width: 29px;
-	height: 257px;
-	overflow: hidden;	
-	margin: 0;
-	padding: 0;
-}
-.directivesSlider dl dt .border-padding {
-	width: 25px;
-	height: 253px;
-	color: #fff;
-	border: 2px solid #0c6db7;
-	background: url("/theme/img/directions_line.png") repeat-y left #0c6db7;
-	position: relative;
-}
-.directivesSlider dl dt .background {
-	background-position: bottom right;
-	background-repeat: no-repeat;
-	height: 225px;
-	width: 22px;
-	overflow: hidden;
-}
-.directivesSlider dl dd {
-	float: left;
-	width: 0;
-	height: 257px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	color: #4a4a4a;
-	background: #fff;
-	font-weight: 600;
-	font-size: 12px;
-}
-.directivesSlider dl dd.active {
-	float: left;
-	width: 845px;
-	height: 257px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	background: #fff;
-}
-.directivesSlider dl .fix-width {
-	width: 831px;
-	height: 255px;
-	overflow: hidden;
-	padding-left: 13px;
-	background: url("/theme/img/directions_arr.png") no-repeat left;
-	border-width: 1px 1px 1px 0;
-	border-style: solid;
-	border-color: #cecece;
-}
-.directivesSlider dl dd .direction-image {
-	background-position: top right;
-	background-repeat: no-repeat;
-	height: 255px;
-	overflow: hidden;
-}
-.directivesSlider dl dd .directions_fade {
-	height: 240px;
-	width: 410px;
-	padding: 15px 96px 0 20px;
-	overflow: hidden;
-	background: url("/theme/img/directions_fade.png") repeat-y left;
-}
-.directivesSlider dl dd h2 {
-	color: #0c6db7;
-	margin: 0 0 10px;
-	font-size: 12px;
-	font-weight: 600;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  Kill them all!!!!   */
+
 
 .indexLeftColumn {
 	float: left;

@@ -89,6 +89,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    }
 	    Zend_Registry::set('lang', $lang);
 	    
+	    $cache = parse_ini_file('cache.ini');
+	    Zend_Registry::set('cache', $cache['cache']);
+	    
 	    /*  Многоязычность на главной  */
 	    $route = new Zend_Controller_Router_Route_Regex(
 	    	'[a-z]{2}',
@@ -113,6 +116,41 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             )
         );
         $router->addRoute('static', $route);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*  Управление кешированием*/
+        $route = new Zend_Controller_Router_Route(
+        	'cachemanager/:mode',
+        array(
+        	'module' => 'default',
+        	'controller' => 'index',
+        	'action'     => 'cache-manager'
+        	)
+        );
+        $router->addRoute('cache-manager-mode', $route);
+        
+        $route = new Zend_Controller_Router_Route(
+        	'cachemanager',
+        	array(
+               	'module' => 'default',
+               	'controller' => 'index',
+               	'action'     => 'cache-manager'
+        	)
+        );
+        $router->addRoute('cache-manager', $route);
+        
+        /*-------------------------*/
         
         /*  Аяксовое получение новостей */
         

@@ -11,69 +11,8 @@ include('../public/cms/db.php');
 $root = dirname(dirname(dirname(__FILE__)));
 $root .= '/';
 
+//TODO move this into abstract model
 $interface = array(
-	"MONTH" => array(
-		"01" => array(
-			"ru" => 'января',
-			"en" => 'January',
-			"de" => 'Januar',
-		),
-		"02" => array(
-			"ru" => 'февраля',
-			"en" => 'February',
-			"de" => 'Februar',
-		),
-		"03" => array(
-			"ru" => 'марта',
-			"en" => 'March',
-			"de" => 'März',
-		),
-		"04" => array(
-			"ru" => 'апреля',
-			"en" => 'April',
-			"de" => 'April',
-		),
-		"05" => array(
-			"ru" => 'мая',
-			"en" => 'May',
-			"de" => 'Mai',
-		),
-		"06" => array(
-			"ru" => 'июня',
-			"en" => 'June',
-			"de" => 'Juni',
-		),
-		"07" => array(
-			"ru" => 'июля',
-			"en" => 'July',
-			"de" => 'Juli',
-		),
-		"08" => array(
-			"ru" => 'августа',
-			"en" => 'August',
-			"de" => 'August',
-		),
-		"09" => array(
-			"ru" => 'сентября',
-			"en" => 'September',
-			"de" => 'September',
-		),
-		"10" => array(
-			"ru" => 'октября',
-			"en" => 'October',
-			"de" => 'Oktober',
-		),
-		"11" => array(
-			"ru" => 'ноября',
-			"en" => 'November',
-			"de" => 'November',
-		),
-		"12" => array(
-			"ru" => 'декабря',
-			"en" => 'December',
-			"de" => 'Dezember',
-		)
-	),
 	"MORE_NEWS" => array(
 			"ru" => 'все новости',
 			"en" => 'more news',
@@ -93,7 +32,7 @@ $interface = array(
 			"ru" => 'Сайты компании:',
 			"en" => 'Sites of the company:',
 			"de" => 'Websites des Unternehmens:',
-	),
+	)
 );
 error_reporting(1);
 // Масив настроек
