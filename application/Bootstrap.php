@@ -92,6 +92,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $cache = parse_ini_file('cache.ini');
 	    Zend_Registry::set('cache', $cache['cache']);
 	    
+	    $cmsSession = new Zend_Session_Namespace('cmsSession');
+	    session_start();
+	    $cmsSession->cms = $_SESSION['cms'];
+	    
 	    /*  Многоязычность на главной  */
 	    $route = new Zend_Controller_Router_Route_Regex(
 	    	'[a-z]{2}',
@@ -131,21 +135,23 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         /*  Управление кешированием*/
         $route = new Zend_Controller_Router_Route(
-        	'cachemanager/:mode',
+        	':lang/cachemanager/:mode',
         array(
         	'module' => 'default',
         	'controller' => 'index',
-        	'action'     => 'cache-manager'
+        	'action'     => 'cache-manager',
+				'lang' => $lang
         	)
         );
         $router->addRoute('cache-manager-mode', $route);
         
         $route = new Zend_Controller_Router_Route(
-        	'cachemanager',
+        	':lang/cachemanager',
         	array(
                	'module' => 'default',
                	'controller' => 'index',
-               	'action'     => 'cache-manager'
+               	'action'     => 'cache-manager',
+				'lang' => $lang
         	)
         );
         $router->addRoute('cache-manager', $route);

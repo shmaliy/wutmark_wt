@@ -71,6 +71,7 @@ class IndexController extends Zend_Controller_Action
     	$params = $request->getParams();
     	
     	$this->view->authorized = 0;
+    	
     	if ($_SESSION['cms']['authorized'] == '1') {
     		
     		$this->view->authorized = 1;
