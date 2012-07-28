@@ -8,7 +8,7 @@ class Menu_Model_MenuFrontend extends My_Model_Abstract
 		parent::__construct();
 	}
 	
-	public function getMenuItems($alias)
+	public function getMenuItems($alias, $nickname = null, $age = null)
 	{
 		$items = $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias($alias));
 		
