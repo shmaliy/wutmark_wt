@@ -16,7 +16,7 @@ class Menu_IndexController extends Zend_Controller_Action
  		$request = $this->getRequest();
  		$params = $request->getParams();
  		
- 		$items = $this->_model->getMenuItems($params['rootAlias']);
+ 		$items = $this->_model->getMenuItems($params['rootAlias'], 'topMenu', '60');
  		//$this->helper->arrayTrans($items);
  		$this->view->items = $items;
  	}
@@ -26,7 +26,7 @@ class Menu_IndexController extends Zend_Controller_Action
  		$request = $this->getRequest();
  		$params = $request->getParams();
  			
- 		$items = $this->_model->getMenuItems($params['rootAlias']);
+ 		$items = $this->_model->getMenuItems($params['rootAlias'], 'bottomMenu', '60');
  		//$this->helper->arrayTrans($items);
  		$this->view->items = $items;
  	}
