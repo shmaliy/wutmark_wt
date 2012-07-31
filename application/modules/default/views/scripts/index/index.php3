@@ -4,6 +4,10 @@
 		<?php echo $this->action('seo', 'index', 'default', array(
 			'alias' => 'seo'
 		)); ?>
+		
+		<?php echo $this->action('index-categories-widget', 'index', 'production', array(
+			'alias' => 'production'
+		)); ?>
 	</div>
 	<div class="right"></div>
 	<div class="clear"></div>

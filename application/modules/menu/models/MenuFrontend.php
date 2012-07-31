@@ -8,16 +8,8 @@ class Menu_Model_MenuFrontend extends My_Model_Abstract
 		parent::__construct();
 	}
 	
-	public function getMenuItems($alias, $nickname = null, $age = null)
+	public function getMenuItems($alias)
 	{
-		$cacheEntrie = $this->getCacheEntry($nickname, $age);
-		
-		if (!empty($cacheEntrie)) {
-			return $cacheEntrie;
-		} else {
-			$items = $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias($alias));
-			echo $this->setCacheEntry($nickname, $items);
-		}
-		return $items;
+		return $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias($alias));
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Adv_Bootstrap extends Zend_Application_Module_Bootstrap
+class Production_Bootstrap extends Zend_Application_Module_Bootstrap
 {    
     public function run()
     {
