@@ -8,13 +8,13 @@ class Production_Model_FrontendModel extends My_Model_Abstract
 		parent::__construct();
 	}
 	
-	public function getCategoriesTree($alias = null)
+	public function getCategoriesTree($rootId = null)
 	{
-		if (is_null($alias)) {
+		if (is_null($rootId)) {
 			return array();
 		}
 		
-		$items = $this->_getCategoriesTree($this->_getCategoriesItems(), $this->_getRootCategoryIdByAlias($alias));
+		$items = $this->_getCategoriesTree($this->_getCategoriesItems(), $rootId);
 		return $items;
 	}
 	

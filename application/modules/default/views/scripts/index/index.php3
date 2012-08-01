@@ -9,6 +9,9 @@
 			'alias' => 'production'
 		)); ?>
 	</div>
-	<div class="right"></div>
+	<div class="right">
+		<?php echo $this->action('last-news', 'new-index', 'content'); ?>
+		<?php echo $this->action('index-select-by-outer-brand', 'index', 'production'); ?>
+	</div>
 	<div class="clear"></div>
 </div>

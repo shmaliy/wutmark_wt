@@ -1,0 +1,1 @@
+<h2><?php echo COCURENTS_SELECT_TITLE; ?></h2>

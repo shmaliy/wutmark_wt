@@ -88,6 +88,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    	$lang = $path[0];
 	    }
 	    Zend_Registry::set('lang', $lang);
+	    include('classes/interface_lang/' . $lang . '.php');
 	    
 	    $cache = parse_ini_file('cache.ini');
 	    Zend_Registry::set('cache', $cache['cache']);
@@ -96,6 +97,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    session_start();
 	    $cmsSession->cms = $_SESSION['cms'];
 	    
+        
 	    /*  Многоязычность на главной  */
 	    $route = new Zend_Controller_Router_Route_Regex(
 	    	'[a-z]{2}',
@@ -109,6 +111,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $router->addRoute('index', $route);
 	    /*-----------------------------*/
 	    
+        
 		/* Статический контент */
 		$route = new Zend_Controller_Router_Route_Regex(
         	'([^.]+)+\/([^.]+).html',
@@ -122,11 +125,60 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $router->addRoute('static', $route);
         
         
+        /*  Новости главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/news',
+        	array(
+            	'module' => 'content',
+                'controller' => 'new-index',
+                'action'     => 'news-index',
+        		'lang' => $lang,
+        		'alias' => 'news'
+       		)
+        );
+        $router->addRoute('news-index', $route);
         
         
+        /*  Области применения главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/areas_of_use',
+	        array(
+	        	'module' => 'content',
+	            'controller' => 'new-index',
+	            'action'     => 'areas-of-use-index',
+	            'lang' => $lang,
+	            'alias' => 'areas_of_use'
+	        )
+        );
+        $router->addRoute('areas-of-use-index', $route);
         
         
+        /*  Справка главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/reference',
+        	array(
+        		'module' => 'content',
+        	    'controller' => 'new-index',
+        	    'action'     => 'reference-index',
+        	    'lang' => $lang,
+        	    'alias' => 'reference'
+        	)
+        );
+        $router->addRoute('reference-index', $route);
         
+        
+        /*  Продукция главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/production',
+       		array(
+            	'module' => 'production',
+                'controller' => 'index',
+                'action'     => 'index',
+                'lang' => $lang,
+                'alias' => 'production'
+        	)
+        );
+        $router->addRoute('production-index', $route);
         
         
         
@@ -171,40 +223,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('ajax_news', $route);
         
-        /* non ajax news */
-        $route = new Zend_Controller_Router_Route(
-        	':lang/news',
-	        array(
-				'module' => 'default',
-	        	'controller' => 'index',
-	        	'action'     => 'news'
-	        )
-        );
-        $router->addRoute('news', $route);
-        
-        /* non ajax news item */
-        $route = new Zend_Controller_Router_Route(
-        	':lang/news/:id',
-	        array(
-				'module' => 'default',
-	        	'controller' => 'index',
-	        	'action'     => 'newsitem'
-	        )
-        );
-        $router->addRoute('newsitem', $route);
-        
-        /* non ajax directives */
-        $route = new Zend_Controller_Router_Route(
-        	':lang/areas_of_activity',
-	        array(
-				'module' => 'default',
-	        	'controller' => 'index',
-	        	'action'     => 'directives'
-	        )
-        );
-        $router->addRoute('areas_of_activity', $route);
-        //echo $lang;
-
 	    return $router;
 	}
 	

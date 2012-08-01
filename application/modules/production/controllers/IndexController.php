@@ -13,7 +13,11 @@ class Production_IndexController extends Zend_Controller_Action
     
     public function indexAction()
     {
-        
+    	$request = $this->getRequest();
+    	$params = $request->getParams();
+    	
+    	$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
+    	$this->view->title = $root['title'];
 	}
 
 	public function indexCategoriesWidgetAction()
@@ -21,11 +25,20 @@ class Production_IndexController extends Zend_Controller_Action
 		$request = $this->getRequest();
 		$params = $request->getParams();
 		
-		$items = $this->_model->getCategoriesTree($params['alias']);
+		$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
+		//$this->_help->arrayTrans($root);
+		
+		
+		$items = $this->_model->getCategoriesTree($root['id']);
 		//$this->_help->arrayTrans($items);
+		$this->view->title = $root['title'];
 		$this->view->items = $items;
 		$this->view->root = '/' . $this->_model->getLang() . '/' . $params['alias'];
-		$this->view->title = $this->_model->getInterfaceWord('OUR_PRODUCTION');
+	}
+	
+	public function indexSelectByOuterBrandAction()
+	{
+		
 	}
 
 }
