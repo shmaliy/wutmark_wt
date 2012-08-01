@@ -237,6 +237,8 @@ class params_gen extends params_db
 	}
 	
 	function adv_bottom($ref, $data = NULL){
+		$parent_id = $_SESSION['cms']['mod']['content']['parent'];
+		
 		$list = $this->get_list($ref);
 		if ($list){
 			foreach ($list as $item){

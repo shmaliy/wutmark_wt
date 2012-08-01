@@ -93,9 +93,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $cache = parse_ini_file('cache.ini');
 	    Zend_Registry::set('cache', $cache['cache']);
 	    
-	    $cmsSession = new Zend_Session_Namespace('cmsSession');
-	    session_start();
-	    $cmsSession->cms = $_SESSION['cms'];
+	  	//session_start();
+	   
 	    
         
 	    /*  Многоязычность на главной  */

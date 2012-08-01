@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 30, 2012 at 08:40 PM
+-- Generation Time: Aug 01, 2012 at 11:19 PM
 -- Server version: 5.1.40
 -- PHP Version: 5.3.3
 
@@ -390,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `cmsusers` (
 --
 
 INSERT INTO `cmsusers` (`id`, `checked_out`, `checked_out_time`, `name`, `login`, `email`, `password`, `usertype`, `block`, `register_date`, `lastvizit_date`, `image`, `param1`, `param2`, `param3`, `param4`, `param5`, `param6`, `param7`, `param8`, `param9`, `param10`, `param11`, `param12`, `param13`, `param14`, `param15`, `param16`, `param17`, `param18`, `param19`, `param20`) VALUES
-(1, 0, '0000-00-00 00:00:00', '', 'admin', 'shmaliy.maxim@gmail.com', 'ce892fcaa9ba4c0a1840414c7314c138', 10, 0, '2011-02-16 11:08:09', '2012-07-29 00:33:38', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(1, 0, '0000-00-00 00:00:00', '', 'admin', 'shmaliy.maxim@gmail.com', 'ce892fcaa9ba4c0a1840414c7314c138', 10, 0, '2011-02-16 11:08:09', '2012-08-01 23:06:24', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
