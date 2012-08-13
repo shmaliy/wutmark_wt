@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+.full-width {
+	width:1000px;
+	
+}
+
+.full-width ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.full-width .plashka-top {
+	width:1000px;
+	height:51px;
+	background:url(/theme/img/index-categories-widget/plashka-top-light-bg.png) top center no-repeat;
+}
+
+.full-width .plashka-middle {
+	background:#3ab1ff;
+}
+
+.full-width .plashka-middle .wrapper {
+	padding:10px 10px 10px 23px;
+	position:relative;
+}
+
+.full-width .plashka-middle .wrapper ul {
+	width:500px;
+	margin: 4px 0 0 0;
+}
+
+.full-width .plashka-middle .wrapper ul li {
+	display:block;
+	width:500px;
+	padding:3px 0 0 0;
+	height:32px;
+	background:url(/theme/img/index-categories-widget/left-ul-bg-bottom.png) bottom left no-repeat;
+}
+
+.full-width .plashka-middle .wrapper ul.hover li ul {
+	display:none;
+}
+
+.full-width .plashka-middle .wrapper ul.hover li.hover ul {
+	display:block;
+}
+
+.full-width .plashka-middle .wrapper ul li.hover {
+	display:block;
+	width:500px;
+	padding:3px 0 0 0;
+	height:32px;
+	background:url(/theme/img/index-categories-widget/left-ul-bg-hover.png) top left no-repeat;
+}
+
+
+
+.full-width .plashka-middle .wrapper ul li a {
+	font-size:18px;
+	color:#fff;
+	text-decoration:none;
+	border-bottom:1px dashed #fff;
+	display:inline-block;
+	margin:3px 0 0 0;
+	margin:0 0 0 10px;
+}
+
+.full-width .plashka-middle .wrapper ul li ul {
+	position:absolute;
+	left:527px;
+	top:6px;
+	background:#1da0ed;
+	display:block;
+	width:440px;
+	padding:12px 17px 12px 5px;
+}
+
+.full-width .plashka-middle .wrapper ul li ul li {
+	width:432px;
+	height:29px;
+	background:none;
+	margin:0;
+	padding:0;
+}
+.full-width .plashka-middle .wrapper ul li ul li.hover {
+	width:432px;
+	height:29px;
+	background:none;
+	margin:0;
+	padding:0;
+}
+
+.full-width .plashka-middle .wrapper ul li ul li a {
+	display:block;
+	font-size:16px;
+	width:404px;
+	height:26px;
+	text-decoration:underline;
+	border-bottom:none;
+	padding:3px 0 0 28px;
+	background:url(/theme/img/index-categories-widget/gear-nohover.png) 7px 5px no-repeat;
+}
+
+.full-width .plashka-middle .wrapper ul li ul li a:hover {
+	background:url(/theme/img/index-categories-widget/gear-hover.png) top left no-repeat;
+}
+
+.full-width .plashka-bottom {
+	width:1000px;
+	height:2px;
+	background:url(/theme/img/index-categories-widget/plashka-bottom-bg.png) top center no-repeat;
+}

@@ -4,6 +4,7 @@
 @import "/theme/css/frontend-static.css" screen; /* Стиль для статического контента */
 @import "/theme/css/frontend-index.css" screen; /* Стиль для главной страницы */
 @import "/theme/css/cache-manager.css" screen; /* Стиль для менеджера кеширования */
+@import "/theme/css/index-selector-widget.css" screen; /* Стиль для менеджера кеширования */
 
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
