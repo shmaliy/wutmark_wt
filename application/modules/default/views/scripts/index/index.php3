@@ -9,12 +9,9 @@
 		<?php echo $this->action('seo', 'index', 'default', array(
 			'alias' => 'seo'
 		)); ?>
-		
-		
 	</div>
 	<div class="right">
 		<?php echo $this->action('last-news', 'new-index', 'content'); ?>
 	</div>
-	
 	<div class="clear"></div>
 </div>

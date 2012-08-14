@@ -1,1 +1,1 @@
-<h2><?php echo COCURENTS_SELECT_TITLE; ?></h2>
+<h2><?php echo CONCURENTS_SELECT_TITLE; ?></h2>
