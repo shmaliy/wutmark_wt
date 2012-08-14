@@ -193,6 +193,18 @@ img {border:none;}
 	margin:-39px 0 0px 0;
 }
 
+.index-container .left {
+	width:610px;
+	float:left;
+	margin:0 26px 25px 0;
+}
+
+.index-container .right {
+	width:364px;
+	float:left;
+	margin:0 0 25px 0;
+}
+
 
 
 
