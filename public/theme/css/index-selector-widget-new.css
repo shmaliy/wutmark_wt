@@ -22,7 +22,7 @@
 	width:235px;
 	height:51px;
 	float:left;
-	
+	cursor:pointer;
 }
 
 .full-width .plashka-top .tab-native-active {
@@ -31,6 +31,7 @@
 	height:51px;
 	float:left;
 	background:url(/theme/img/index-categories-widget/native-title-active-bg.png) top center no-repeat;
+	cursor:pointer;
 }
 
 .full-width .plashka-top .tab-native span,
@@ -46,13 +47,14 @@
 	width:480px;
 	height:51px;
 	float:left;
+	cursor:pointer;
 }
 
 .full-width .plashka-top .tab-concurents span,
 .full-width .plashka-top .tab-concurents-active span{
-	font-size:24px;
+	font-size:16px;
 	color:#fff;
-	padding:12px 0 0 22px;
+	padding:18px 0 0 22px;
 	display:block;
 }
 
@@ -62,6 +64,7 @@
 	height:51px;
 	float:left;
 	background:url(/theme/img/index-categories-widget/concurents-title-active-bg.png) top center no-repeat;
+	cursor:pointer;
 }
 
 

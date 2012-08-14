@@ -1,6 +1,6 @@
 <div class="plashka-top">
-	<a class="tab-native" id="tab-native" onclick="$.fn.catWidget('tabNative');"><span>Наша продукция</span></a>
-	<a class="tab-concurents" id="tab-concurents" onclick="$.fn.catWidget('tabConcurents');"><span>Подбор по поменклатуре конкурентов</span></a>
+	<a class="tab-native" id="tab-native" onclick="$.fn.catWidget('tabNative');"><span><?php echo OUR_PRODUCTION_TITLE;?></span></a>
+	<a class="tab-concurents" id="tab-concurents" onclick="$.fn.catWidget('tabConcurents');"><span><?php echo CONCURENTS_SELECT_TITLE;?></span></a>
 	<div class="clear"></div>
 </div>
 <div class="plashka-middle">
