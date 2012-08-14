@@ -1,17 +1,27 @@
-<h2><?php echo $this->title; ?></h2>
-
-
-
-<div class="plashka-top"></div>
+<div class="plashka-top">
+	<a class="tab-native" id="tab-native" onclick="$.fn.catWidget('tabNative');"><span>Наша продукция</span></a>
+	<a class="tab-concurents" id="tab-concurents" onclick="$.fn.catWidget('tabConcurents');"><span>Подбор по поменклатуре конкурентов</span></a>
+	<div class="clear"></div>
+</div>
 <div class="plashka-middle">
 	<div class="wrapper">
 		<div id="native-categories">
-			<?php echo $this->partial('index-categories-widget-partial.php3', 'production', array(
-				'items' => $this->items,
-				'root' => $this->root,
-				'class' => 'root'
-			)); ?>
+			<ul class="root">
+			<?php foreach ($this->items as $item) : ?>
+				<li>
+					<a href="<?php echo $this->root . '/' . $item['title_alias']; ?>"><?php echo $item['title'];?></a>
+					<?php if (!empty($item['childs'])) : ?>
+						<ul class="child">
+						<?php foreach ($item['childs'] as $child) : ?>
+							<li><a href="<?php echo $this->root . '/' . $item['title_alias'] . '/' . $child['title_alias']; ?>"><?php echo $child['title'];?></a></li>
+						<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>	
+			</ul>
 		</div>
+		<div id="concurents"><?php echo $this->action('index-select-by-outer-brand', 'index', 'production'); ?></div>
 	</div>
 </div>
 <div class="plashka-bottom"></div>
@@ -19,22 +29,33 @@
 <script>
 (function( $ ) {
 	
+	var nativeTab = '#tab-native';
+	var concurentsTab = '#tab-concurents';
+
+	var nativeField = '#native-categories';
+	var concurentsField = '#concurents';
+	
 	var methods = {
 		init: function () {
-				
+			$(nativeTab).removeClass('tab-native').addClass('tab-native-active');	
+			$(concurentsField).css('display', 'none');
+			return false;
 		},
 
-		start: function (container)
-		{
-			var catlist = $(container + ' > ul.root > li.root-child');
-			var first = $(catlist + ':first-child');
-			first.toggleClass('hover');
-			console.log(catlist.length);
-		}, 
+		tabNative: function () {
+			$(nativeTab).removeClass('tab-native').addClass('tab-native-active');	
+			$(concurentsTab).removeClass('tab-concurents-active').addClass('tab-concurents');
+			$(concurentsField).css('display', 'none');
+			$(nativeField).css('display', 'block');
+			return false;
+		},
 
-		change: function (id)
-		{
-			
+		tabConcurents: function () {
+			$(nativeTab).removeClass('tab-native-active').addClass('tab-native');	
+			$(concurentsTab).removeClass('tab-concurents').addClass('tab-concurents-active');
+			$(nativeField).css('display', 'none');
+			$(concurentsField).css('display', 'block');
+			return false;
 		}
 	};
 	
@@ -52,7 +73,6 @@
 })( jQuery );
 
 $(document).ready(function(){
-	$.fn.catWidget('start', '#native-categories');
+	$.fn.catWidget('init');
 });
-
 </script>
