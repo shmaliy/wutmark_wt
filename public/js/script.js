@@ -1,10 +1,11 @@
 (function( $ ) {
 	
 	var container = '#latest-news-contaioner';
+	var baseUrl = '/content/new-index/last-news/limit/5/category/news/lang/' + lang;
 	
 	var methods = {
 		init: function () {
-			$(this).newsManager('request', '/content/new-index/last-news/limit/5');	
+			$(this).newsManager('request', baseUrl);	
 		},
 		
 		request: function (url, data)

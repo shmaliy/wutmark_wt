@@ -1,6 +1,9 @@
 <?php echo $this->doctype('XHTML1_TRANSITIONAL'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script>
+	var lang = '<?php echo Zend_Registry::get('lang'); ?>';
+</script>
 <?php $this->headTitle('Wutmarc')->setSeparator(' | '); ?>
 
 <?php $this->headLink()->appendStylesheet('/theme/css/style.css')

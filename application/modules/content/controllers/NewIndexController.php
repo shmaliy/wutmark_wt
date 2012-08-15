@@ -36,8 +36,10 @@ class Content_NewIndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
-		
+				
 		if ($request->isXmlHttpRequest() || $request->isPost()) {
+			$root = $this->_model->getRootCategoryEntryByAlias($params['category'], $params['lang']);
+			//var_export ($root);
 			$this->_helper->layout()->disableLayout();
 			$this->render('last-news-inner');
 		} else {

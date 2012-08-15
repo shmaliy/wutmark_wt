@@ -26,14 +26,16 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		return $item;
 	}
 	
-	public function getMenuItems()
-	{
-		return $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias('mainmenu'));
-	}
+	
 	
 	public function getCategoriesItems()
 	{
 		return $this->_getCategoriesTree($this->_getCategoriesItems());
+	}
+	
+	public function getNews()
+	{
+		
 	}
 	
 }
