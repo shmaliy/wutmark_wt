@@ -9,6 +9,10 @@ class Content_NewIndexController extends Zend_Controller_Action
 		$this->_model = new Content_Model_FrontendModel();
 		$this->helper = $this->_model->helper;
 		$this->view->helper = $this->_model->helper;
+		
+		$context = $this->_helper->AjaxContext();
+		$context->addActionContext('last-news', 'json');
+		$context->initContext('json');
 	}
 	
 	public function indexAction()
@@ -30,6 +34,15 @@ class Content_NewIndexController extends Zend_Controller_Action
 	
 	public function lastNewsAction()
 	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		
+		if ($request->isXmlHttpRequest() || $request->isPost()) {
+			$this->_helper->layout()->disableLayout();
+			$this->render('last-news-inner');
+		} else {
+			$this->render('last-news');
+		}
 		
 	}
 	

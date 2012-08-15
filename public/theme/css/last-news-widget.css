@@ -32,6 +32,12 @@
 	padding:13px 0 10px 0;
 }
 
+.latest-news-container .content-plashka .loader {
+	width:364px;
+	height:66px;
+	background:url(/theme/img/latest-news-widget/ajax-loader.gif) top center no-repeat;
+}
+
 .latest-news-container .content-plashka .items {
 	
 }
