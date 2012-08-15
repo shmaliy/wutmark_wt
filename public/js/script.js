@@ -4,7 +4,7 @@
 	
 	var methods = {
 		init: function () {
-			$(this).newsManager('request', '/content/new-index/last-news/limit/6');	
+			$(this).newsManager('request', '/content/new-index/last-news/limit/5');	
 		},
 		
 		request: function (url, data)
