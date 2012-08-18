@@ -193,11 +193,34 @@ class Content_NewIndexController extends Zend_Controller_Action
 		$request = $this->getRequest();
 		$params = $request->getParams();
 		//$this->helper->arrayTrans($params);
-	
+		
+				
 		$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
-		//$this->helper->arrayTrans($root);
-	
 		$this->view->title = $root['title'];
+		
+		$items = $this->_model->getReferenceList(array($root['id']));
+		$this->view->count = count($items);
+		
+		$page = $request->getParam('page', 1);
+		$this->view->page = $page;
+		$limit = 8;
+		$offset = ($page-1)*$limit;
+		
+		if($this->view->count / $limit == floor($this->view->count / $limit)) {
+			$this->view->pagecount = floor($this->view->count / $limit);
+		} else {
+			$this->view->pagecount = floor($this->view->count / $limit) + 1;
+		}
+		
+		$front = array();
+		
+		for ($i = $offset; $i < $offset+$limit; $i++) {
+			if ($i < $this->view->count) {
+				$front[] = $items[$i];
+			}
+		}
+		
+		$this->view->front = $front;
 	}
 	
 	public function referenceItemAction()
