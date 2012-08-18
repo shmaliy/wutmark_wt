@@ -139,7 +139,7 @@ class Content_NewIndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
-		//$this->helper->arrayTrans($params);
+		$this->helper->arrayTrans($params);
 		
 		$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
 		//$this->helper->arrayTrans($root);
