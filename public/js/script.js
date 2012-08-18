@@ -1,7 +1,7 @@
 (function( $ ) {
 	
 	var container = '#latest-news-contaioner';
-	var baseUrl = '/content/new-index/last-news/limit/5/category/news/lang/' + lang;
+	var baseUrl = '/content/new-index/last-news/limit/5/offset/0/category/news/page/1/lang/' + lang;
 	
 	var methods = {
 		init: function () {
@@ -29,6 +29,7 @@
 										
 				}
 			});
+			return false;
 		}
 	};
 	

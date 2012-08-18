@@ -137,6 +137,29 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('news-index', $route);
         
+        /*  Новости главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/news/:id',
+        	array(
+            	'module' => 'content',
+                'controller' => 'new-index',
+                'action'     => 'news-item',
+                'lang' => $lang
+        	)
+        );
+        $router->addRoute('news-item', $route);
+        
+        /*  Ajax news  */
+        $route = new Zend_Controller_Router_Route(
+        	'content/new-index/last-news/*',
+        	array(
+               	'module' => 'content',
+                'controller' => 'new-index',
+                'action'     => 'last-news',
+            )
+        );
+        $router->addRoute('ajax-last-news', $route);
+        
         
         /*  Области применения главная  */
         $route = new Zend_Controller_Router_Route(

@@ -1,10 +1,11 @@
 <?php
 class Content_Model_FrontendModel extends My_Model_Abstract
 {
+	private $_image;
 	
 	public function __construct()
 	{
-		
+		$this->_image = new My_Image_Image();
 		parent::__construct();
 	}
 	
@@ -33,9 +34,16 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		return $this->_getCategoriesTree($this->_getCategoriesItems());
 	}
 	
-	public function getNews()
+	public function getNews($id)
 	{
+		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 		
+		foreach ($items as &$item) {
+			
+			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_65px')->resizeToWidth(65);
+		}
+		
+		return $items;
 	}
 	
 }
