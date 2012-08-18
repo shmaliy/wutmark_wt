@@ -37,19 +37,29 @@ class Content_NewIndexController extends Zend_Controller_Action
 		$request = $this->getRequest();
 		$params = $request->getParams();
 		
-		
+		$page = new Zend_Session_Namespace('page');
 		
 		if ($request->isXmlHttpRequest() || $request->isPost()) {
 			$root = $this->_model->getRootCategoryEntryByAlias($params['category'], $params['lang']);
 			$items = $this->_model->getNews(array($root['id']));
 			
+			$first = $request->getParam('first', 'false');
+			
+			if(!isset($page->limit) || $first == 'false') $page->limit = $params['limit'];
+			else $params['limit'] = $page->limit;
+			
+			if(!isset($page->offset) || $first == 'false') $page->offset = $params['offset'];
+			else $params['offset'] = $page->offset;
+			
+			if(!isset($page->page) || $first == 'false') $page->page = $params['page'];
+			else $params['page'] = $page->page;
+			
 			$this->view->count = count($items);
 			
-			if ($this->view->count/$params['limit'] != floor($this->view->count/$params['limit'])) {
-				$this->view->pages = floor($this->view->count/$params['limit']) + 1;
-			} else {
-				$this->view->pages = $this->view->count/$params['limit'];
-			}
+			if ($this->view->count/$params['limit'] != floor($this->view->count/$params['limit'])) 
+			$this->view->pages = floor($this->view->count/$params['limit']) + 1;
+			else $this->view->pages = $this->view->count/$params['limit'];
+			
 			
 			$this->view->current = $params['page'];
 			$this->view->limit = $params['limit'];
@@ -64,8 +74,6 @@ class Content_NewIndexController extends Zend_Controller_Action
 			}
 			
 			$this->view->items = $news;
-			//var_export($news);
-			//var_export($params);
 			
 			$this->_helper->layout()->disableLayout();
 			$this->render('last-news-inner');

@@ -18,7 +18,8 @@
 	<a href="" onclick = "return $.fn.newsManager('request', '<?php echo $this->url(array(
 		"limit" => $this->limit,
 		"offset" =>	$this->limit * ($i-1),
-		"page" => $i
+		"page" => $i,
+		"first" => 'false'
 	), 'ajax-last-news');?>');"><?php echo $i; ?></a>
 	<?php endif; ?>
 <?php endfor; ?>
