@@ -6,3 +6,6 @@ define('OUR_PRODUCTION_TITLE', 'Our production');
 
 define('LAST_REFERENCE_TITLE', 'New Articles');
 define('INDEX_ALL_REFERENCE_LINK', 'All Articles');
+
+define('POSTED_ON', 'Posted on');
+define('PAGES', 'Pages:');

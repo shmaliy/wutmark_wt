@@ -6,6 +6,7 @@
 @import "/theme/css/cache-manager.css" screen; /* Стиль для менеджера кеширования */
 @import "/theme/css/index-selector-widget-new.css" screen; /* Стиль для менеджера кеширования */
 @import "/theme/css/last-news-widget.css" screen; /* Стиль для менеджера кеширования */
+@import "/theme/css/news-reference-list.css" screen; /* Стиль для менеджера кеширования */
 
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
