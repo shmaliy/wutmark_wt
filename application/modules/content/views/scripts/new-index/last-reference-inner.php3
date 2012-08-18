@@ -4,7 +4,7 @@
 		<img class="thumbnail" src="/<?php echo $item['image']; ?>" />
 		<div class="text">
 			<a class="title" href="<?php echo $this->url(array('id' => $item['id'], 'lang' => $this->lang), 'reference-item'); ?>"><?php echo $item['title']; ?></a>
-			<div class="date"><?php echo date("d.m.Y", $item['created']); ?></div>
+			<div class="date"><?php echo $item['introtext']; ?></div>
 		</div>
 		<div class="clear"></div>
 	</div>
