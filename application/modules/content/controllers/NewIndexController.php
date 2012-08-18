@@ -174,6 +174,11 @@ class Content_NewIndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
+		//$this->helper->arrayTrans($params);
+		
+		$item = $this->_model->getContentItemById($params['id']);
+		$this->view->item = $item;
+		//$this->helper->arrayTrans($item);
 	}
 	
 	public function areasOfUseIndexAction()
@@ -227,6 +232,10 @@ class Content_NewIndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
-		$this->helper->arrayTrans($params);
+		//$this->helper->arrayTrans($params);
+		
+		$item = $this->_model->getContentItemById($params['id']);
+		$this->view->item = $item;
+		//$this->helper->arrayTrans($item);
 	}
 }

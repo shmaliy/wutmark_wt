@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
+.date {
+	font-size:10px;
+	color: #6c6c6c;
+	margin:0 0 5px 0;
+}
+
 .news-reference-items {
 	width:610px;
 	margin:0 0 10px 0;

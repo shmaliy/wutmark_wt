@@ -27,6 +27,10 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		return $item;
 	}
 	
+	public function getContentItemById($id)
+	{
+		return $this->_getContentItemById($id);
+	}
 	
 	
 	public function getCategoriesItems()
@@ -39,7 +43,6 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 		
 		foreach ($items as &$item) {
-			
 			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_65px')->resizeToWidth(65);
 		}
 		
@@ -51,7 +54,6 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 	
 		foreach ($items as &$item) {
-				
 			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_100px')->resizeToWidth(100);
 		}
 	
@@ -63,7 +65,6 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 	
 		foreach ($items as &$item) {
-	
 			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_100px')->resizeToWidth(100);
 		}
 	
@@ -75,7 +76,6 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 	
 		foreach ($items as &$item) {
-				
 			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_65px')->resizeToWidth(65);
 		}
 	
