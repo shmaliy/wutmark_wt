@@ -46,4 +46,16 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		return $items;
 	}
 	
+	public function getReferences($id)
+	{
+		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
+	
+		foreach ($items as &$item) {
+				
+			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_65px')->resizeToWidth(65);
+		}
+	
+		return $items;
+	}
+	
 }
