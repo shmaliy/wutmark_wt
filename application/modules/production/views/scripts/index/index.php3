@@ -1,3 +1,10 @@
 <?php $this->headTitle($this->title); ?>
-<h1><?php echo $this->title; ?></h1>
-<?php echo $this->action('index-select-by-outer-brand', 'index', 'production'); ?>
+
+<div class="index-container">
+	<div class="full-width">
+		<?php echo $this->action('index-categories-widget', 'index', 'production', array(
+			'alias' => 'production'
+		)); ?>
+	</div>
+	<div class="clear"></div>
+</div>

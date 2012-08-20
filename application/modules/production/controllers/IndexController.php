@@ -19,6 +19,18 @@ class Production_IndexController extends Zend_Controller_Action
     	$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
     	$this->view->title = $root['title'];
 	}
+	
+	public function categoryAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+	}
+	
+	public function subCategoryAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+	}
 
 	public function indexCategoriesWidgetAction()
 	{
