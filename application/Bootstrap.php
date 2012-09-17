@@ -110,6 +110,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $router->addRoute('index', $route);
 	    /*-----------------------------*/
 	    
+	    /*  Области применения главная  */
+	    $route = new Zend_Controller_Router_Route(
+	    	':lang/deliveryforms.html',
+	    	array(
+	        	'module' => 'content',
+	    	    'controller' => 'new-index',
+	    	    'action'     => 'static-content-item',
+	    		'lang' => $lang,
+        		'2' => 'deliveryforms'
+	    	)
+	    );
+	    $router->addRoute('deliveryforms', $route);
         
 		/* Статический контент */
 		$route = new Zend_Controller_Router_Route_Regex(
@@ -122,6 +134,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             )
         );
         $router->addRoute('static', $route);
+        
+        
         
         
         /*  Новости главная  */
@@ -184,6 +198,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	        )
         );
         $router->addRoute('areas-of-use-index', $route);
+        
+
         
         
         /*  Справка главная  */
