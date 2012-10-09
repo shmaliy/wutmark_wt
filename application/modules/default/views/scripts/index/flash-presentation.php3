@@ -1,4 +1,4 @@
-<?php echo $this->htmlFlash(
+<?php /*echo $this->htmlFlash(
 				'/theme/swf/' . $this->lang . '_presentation.swf',
 				array(
 					'width'=> 1000,
@@ -6,4 +6,6 @@
 					'loop' => 'false'
 				)
 
-); ?>
+);*/ ?>
+<br />
+<br />

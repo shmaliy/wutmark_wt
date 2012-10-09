@@ -130,6 +130,32 @@ img {border:none;}
 	width:170px;
 }
 
+.header_resize .sitesSelect .container form {
+	margin:0;
+	padding:0;
+}
+
+.header_resize .sitesSelect .container form dl {
+	margin:0;
+	padding:0;	
+}
+
+.header_resize .sitesSelect .container form dl dt {
+	margin:0;
+	padding:0;	
+	display:none;
+}
+
+.header_resize .sitesSelect .container form dl dd {
+	margin:0;
+	padding:0;	
+}
+
+.header_resize .sitesSelect .container form dl dd select {
+	margin:0;
+	padding:0;		
+}
+
 .header_resize .sitesSelect .container .title {
 	font-weight:bold;
 	margin:0 0 5px 0;
