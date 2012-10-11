@@ -8,6 +8,7 @@
 
 <?php $this->headLink()->appendStylesheet('/theme/css/style.css')
 					   ->appendStylesheet('/theme/css/swf.css')
+					   ->appendStylesheet('/js/coin-slider/coin-slider-styles.css')
 					   ->headLink(array('rel' => 'favicon', 'href' => '/favicon.png'), 'PREPEND'); ?>
 <?
 	$this->headMeta()->appendName('keywords', '')
@@ -22,15 +23,12 @@
 <?php echo $this->headLink(); ?>
 
 <?php
-	$this->headScript()->appendFile('/js/jquery/jquery-1.7.2.min.js');
-	$this->headScript()->appendFile('/js/jquery/jquery-ui-1.8.20.custom/jquery-ui-1.8.20.custom.min.js');
-	$this->headScript()->appendFile('/js/jquery/jquery.jqGrid-4.3.3/i18n/grid.locale-ru.js');
-	$this->headScript()->appendFile('/js/jquery/jquery.swfupload/swfupload.js');
-	$this->headScript()->appendFile('/js/jquery/jquery.swfupload.js');
-	$this->headScript()->appendFile('/js/project_frontend.js');
+	$this->headScript()->appendFile('/js/jquery-1.8.1.min.js');
+	$this->headScript()->appendFile('/js/jquery/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js');
 	$this->headScript()->appendFile('/js/script.js');
 	$this->headScript()->appendFile('/js/index.js');
 	$this->headScript()->appendFile('/js/content.js');
+	$this->headScript()->appendFile('/js/coin-slider/coin-slider.js');
 	echo $this->headScript();
 ?>
 

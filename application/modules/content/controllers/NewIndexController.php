@@ -193,6 +193,45 @@ class Content_NewIndexController extends Zend_Controller_Action
 		//$this->helper->arrayTrans($root);
 		
 		$this->view->title = $root['title'];
+		
+		$items = $this->_model->getFullAreasList(array($root['id']));
+		
+		$this->view->count = count($items);
+		
+		$page = $request->getParam('page', 1);
+		$this->view->page = $page;
+		$limit = 8;
+		$offset = ($page-1)*$limit;
+		
+		if($this->view->count / $limit == floor($this->view->count / $limit)) {
+			$this->view->pagecount = floor($this->view->count / $limit);
+		} else {
+			$this->view->pagecount = floor($this->view->count / $limit) + 1;
+		}
+		
+		$front = array();
+		
+		for ($i = $offset; $i < $offset+$limit; $i++) {
+			if ($i < $this->view->count) {
+				$front[] = $items[$i];
+			}
+		}
+		
+		$this->view->front = $front;
+		
+		
+	}
+	
+	
+	public function areasItemAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		//$this->helper->arrayTrans($params);
+	
+		$item = $this->_model->getContentItemById($params['id']);
+		$this->view->item = $item;
+		//$this->helper->arrayTrans($item);
 	}
 	
 	public function referenceIndexAction()

@@ -199,6 +199,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('areas-of-use-index', $route);
         
+        /*  Области применения главная  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/areas_of_use/:id',
+        	array(
+        	   	'module' => 'content',
+        	    'controller' => 'new-index',
+        	    'action'     => 'areas-item',
+        	    'lang' => $lang,
+        	    'alias' => 'areas_of_use'
+        	)
+        );
+        $router->addRoute('areas-of-use-item', $route);
+        
 
         
         

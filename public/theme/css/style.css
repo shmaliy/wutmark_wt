@@ -14,6 +14,7 @@ html {
 
 }
 
+
 h1, h2, h3, h4, h5, h6 { padding:0; margin:0; font-weight:normal;  }
 
 h1 {
@@ -217,7 +218,7 @@ img {border:none;}
 
 .flash-presentation {
 	width:1000px;
-	height: 142px;
+	height: 250px;
 	margin:-39px 0 0px 0;
 }
 
