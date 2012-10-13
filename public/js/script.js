@@ -94,7 +94,19 @@
 	};
 })( jQuery );
 
+//Observe generic menu class toggle
+function hoverMaker()
+{
+	$('ul.generic-menu li, tr').each(function(){
+		$(this).hover(
+			function(){ $(this).addClass("hover"); },
+			function(){ $(this).removeClass("hover"); }
+		);
+	});
+}
+
 $(document).ready(function(){
 	$.fn.newsManager('init');
 	$.fn.refManager('init');
+	hoverMaker();
 });

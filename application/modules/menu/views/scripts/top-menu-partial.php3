@@ -1,9 +1,4 @@
-<?php if ($this->iteration == 0) : ?>
 <ul class="generic-menu">
-<?php else : ?>
-<ul>
-<?php endif; ?>
-
 <?php foreach ($this->items as $item) : ?>
 	<li>
 		<a href = "<?php echo $item['link']; ?>"><?php echo $item['title']; ?></a>

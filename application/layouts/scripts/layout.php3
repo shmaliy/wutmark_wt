@@ -45,7 +45,9 @@
 </div>
 <div class="body">
 	<div class="push1"></div>
-	<?php echo $this->layout()->content;?>
+		<div class="wrapper">
+		<?php echo $this->layout()->content;?>
+		</div>
     <div class="push2"></div>    
 </div>
 <div class="footer">

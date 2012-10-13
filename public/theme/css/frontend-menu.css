@@ -3,12 +3,16 @@
 .mainMenu {
 	height:37px;
 	width:1000px;
+	z-index:100000000;
+	position:relative;
 }
 
 ul.generic-menu {
 	list-style:none;
 	margin:0;
 	padding:0;
+	position:absolute;
+	z-index:1100;
 }
 
 ul.generic-menu li {
@@ -16,25 +20,23 @@ ul.generic-menu li {
 	height:27px;
 	padding:10px 19px 0 19px;
 	float:left;
-	
 	margin:0 5px 0 0;
 	background: url(/theme/img/mainmenu/top_inactive_bg.png) bottom left repeat-x;
 	position:relative;
+}
+
+ul.generic-menu li a {
+	font-size:14px;
+	font-weight:bold;
+	color:#0c6db7;
 }
 
 ul.generic-menu li ul {
 	list-style:none;
 	margin:0;
 	padding:0;
-}
-
-
-ul.generic-menu li  ul {
+	z-index:1100;
 	display:none;
-}
-
-ul.generic-menu li.hover  ul {
-	display:block;
 }
 
 ul.generic-menu li.hover {
@@ -44,6 +46,11 @@ ul.generic-menu li.hover {
 ul.generic-menu li.hover a {
 	color:white;
 	text-decoration:none;
+}
+
+ul.generic-menu li.hover ul {
+	display:block;
+	z-index:1100000;
 }
 
 ul.generic-menu li.hover  ul li a {
@@ -67,6 +74,7 @@ ul.generic-menu li  ul {
 	padding:0;
 	margin:0 0 0 -20px;
 	top:37px;
+	z-index:110000;
 }
 
 ul.generic-menu li  ul li {
@@ -88,10 +96,9 @@ ul.generic-menu li  ul li a {
 	padding:5px 15px 5px 15px;
 }
 
-
 .bottomMenu	{
 	float:right;
-	width:625px;
+	width:750px;
 	margin:20px 15px 15px 0;
 }
 
