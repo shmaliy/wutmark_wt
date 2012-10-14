@@ -46,6 +46,9 @@
 <div class="body">
 	<div class="push1"></div>
 		<div class="wrapper">
+		<?php if (count(explode('/', trim($_SERVER['REQUEST_URI'], '/'))) > 1) : ?>
+			<div class="subpush"></div>
+		<?php endif;?>
 		<?php echo $this->layout()->content;?>
 		</div>
     <div class="push2"></div>    

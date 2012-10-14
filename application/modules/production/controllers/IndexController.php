@@ -24,14 +24,9 @@ class Production_IndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
+		$this->_help->arrayTrans($params);
 	}
 	
-	public function subCategoryAction()
-	{
-		$request = $this->getRequest();
-		$params = $request->getParams();
-	}
-
 	public function indexCategoriesWidgetAction()
 	{
 		$request = $this->getRequest();

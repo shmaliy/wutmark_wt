@@ -232,8 +232,8 @@
 			$(el).append("<div id='cs-navigation-"+el.id+"'></div>");
 			$('#cs-navigation-'+el.id).hide();
 			
-			$('#cs-navigation-'+el.id).append("<a href='#' id='cs-prev-"+el.id+"' class='cs-prev'>prev</a>");
-			$('#cs-navigation-'+el.id).append("<a href='#' id='cs-next-"+el.id+"' class='cs-next'>next</a>");
+			$('#cs-navigation-'+el.id).append("<a href='#' id='cs-prev-"+el.id+"' class='cs-prev'><</a>");
+			$('#cs-navigation-'+el.id).append("<a href='#' id='cs-next-"+el.id+"' class='cs-next'>></a>");
 			$('#cs-prev-'+el.id).css({
 				'position' 	: 'absolute',
 				'top'		: params[el.id].height/2 - 15,

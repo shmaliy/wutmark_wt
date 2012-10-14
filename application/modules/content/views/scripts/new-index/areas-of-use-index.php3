@@ -23,7 +23,7 @@
 					<?php if ($i == $this->page) : ?>
 					<div class="current"><?php echo $i;?></div>
 					<?php else : ?>
-					<a href="<?php echo $this->url(array(), 'news-index'); ?>?page=<?php echo $i; ?>"><?php echo $i;?></a>
+					<a href="<?php echo $this->url(array(), 'areas-of-use-index'); ?>?page=<?php echo $i; ?>"><?php echo $i;?></a>
 					<?php endif; ?>
 				<?php endfor; ?>
 				<div class="clear"></div>
@@ -34,14 +34,14 @@
 	</div>
 	<div class="right">
 		<div id="last-news-container">
-			<?php echo $this->action('last-reference', 'new-index', 'content'); ?>
+			<?php echo $this->action('last-news', 'new-index', 'content'); ?>
 		</div>
 	</div>
 	<div class="clear"></div>
 	<div class="full-width">
-		<?php echo $this->action('index-categories-widget', 'index', 'production', array(
+		<?php /*echo $this->action('index-categories-widget', 'index', 'production', array(
 			'alias' => 'production'
-		)); ?>
+		));*/ ?>
 	</div>
 	
 </div>
