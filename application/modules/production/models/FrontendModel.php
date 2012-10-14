@@ -18,27 +18,9 @@ class Production_Model_FrontendModel extends My_Model_Abstract
 		return $items;
 	}
 	
-	public function getStaticContentItem($alias = null)
+	public function getGoods($parentId)
 	{
-		if (is_null($alias)) {
-			return array();
-		}
-		$item = $this->_getContentItemByAlias($alias);
-		
-		if (!empty($item['image'])) {
-			
-		}
-
-		if (!empty($item['images'])) {
-				
-		}
-		
-		return $item;
-	}
-	
-	public function getMenuItems()
-	{
-		return $this->_getMenuTree($this->_getMenuItems(), $this->_getMenuItemIdByAlias('mainmenu'));
+		return $this->_getContentListByCategoryId(array($parentId));
 	}
 	
 }

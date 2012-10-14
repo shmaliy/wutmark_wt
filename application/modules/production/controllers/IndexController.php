@@ -24,7 +24,48 @@ class Production_IndexController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$params = $request->getParams();
-		$this->_help->arrayTrans($params);
+		//$this->_help->arrayTrans($params);
+		
+		$rootCategory = $params['module'];
+		$category = $params['cat_alias'];
+		$subCategory = $request->getParam('subcat_alias', false);
+		
+		// Получаем инфо о корневой категории
+		$rootCategory = $this->_model->getRootCategoryEntryByAlias($rootCategory);	
+		$this->view->root = $rootCategory;
+		//$this->_help->arrayTrans($rootCategory);
+		
+		// Получаем текущую категорию первого уровня
+		$category = $this->_model->getDependedCategoryEntryByParent($category, $rootCategory['id']);
+		$this->view->category = $category;
+		//$this->_help->arrayTrans($category);
+		
+		// Проверяем наличие товаров в категории
+		$goods_first =  $this->_model->getGoods($category['id']);	
+		$this->view->goods_first = $goods_first;
+		$this->_help->arrayTrans($goods_first);
+		
+		// Вынимаем сптсок подкатегорий
+		if($subCategory == false) {
+			$subcats = $this->_model->getDependedCategoriesListByParent($category['id']);
+			$this->view->sucats_list = $subcats;
+			$this->_help->arrayTrans($subcats);
+		}
+		
+		
+		// Получаем инфо о подкатегории
+		if($subCategory != false) {
+			$subCategory = $this->_model->getDependedCategoryEntryByParent($subCategory, $category['id']);
+			$this->view->sub_cat = $subCategory;
+			//$this->_help->arrayTrans($subCategory);
+			
+			// Получаем товары из подкатегории
+			$goods_second =  $this->_model->getGoods($subCategory['id']);
+			$this->view->goods_second = $goods_second;
+			$this->_help->arrayTrans($goods_second);
+		}
+		
+		
 	}
 	
 	public function indexCategoriesWidgetAction()
