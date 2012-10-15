@@ -8,7 +8,7 @@
 			<div class="news-reference-item">
 				<img src="/<?php echo $item['image']; ?>" />
 				<div class="text-container">
-					<a class="title" href="<?php echo $this->url(array('id' => $item['id']), 'reference-item'); ?>"><?php echo $item['title']; ?></a>
+					<a class="title" href="<?php echo $this->url(array('id' => $item['id'], 'cat' => $this->category['title_alias']), 'reference-item'); ?>"><?php echo $item['title']; ?></a>
 					<div class="date"><?php echo POSTED_ON; ?> <?php echo date("d.m.Y", $item['created']); ?></div>
 					<div class="introtext"><?php echo $item['introtext']; ?></div>
 				</div>

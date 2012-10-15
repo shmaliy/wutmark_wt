@@ -13,6 +13,7 @@ class Content_NewIndexController extends Zend_Controller_Action
 		$context = $this->_helper->AjaxContext();
 		$context->addActionContext('last-news', 'json');
 		$context->initContext('json');
+		$this->_image = new My_Image_Image();
 	}
 	
 	public function indexAction()
@@ -94,7 +95,13 @@ class Content_NewIndexController extends Zend_Controller_Action
 	
 		if ($request->isXmlHttpRequest() || $request->isPost()) {
 			$root = $this->_model->getRootCategoryEntryByAlias($params['category'], $params['lang']);
-			$items = $this->_model->getReferences(array($root['id']));
+			$cats = $this->_model->getDependedCategoriesListByParent($root['id']);
+			
+			$parents = array();
+			foreach ($cats as $cat) {
+				$parents[] = $cat['id'];
+			}
+			$items = $this->_model->getReferences($parents);
 				
 			$first = $request->getParam('first', 'false');
 				
@@ -234,6 +241,32 @@ class Content_NewIndexController extends Zend_Controller_Action
 		//$this->helper->arrayTrans($item);
 	}
 	
+	public function referenceCategoryAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		//$this->helper->arrayTrans($params);
+		
+		$rootCategory = $params['alias'];
+		// Получаем инфо о корневой категории
+		$rootCategory = $this->_model->getRootCategoryEntryByAlias($rootCategory);
+		$this->view->root = $rootCategory;
+		//$this->helper->arrayTrans($rootCategory);
+		
+		$subcats = $this->_model->getDependedCategoriesListByParent($rootCategory['id']);
+		
+		foreach ($subcats as &$subcat) {
+			if (empty($subcat['image'])) {
+				$subcat['image'] = '/contents/noimage.png';
+			}
+			$subcat['image'] = $this->_image->setImage($subcat['image'], 'thumbs_50px')->resizeToWidth(50);
+		}
+		$this->view->subcats_list = $subcats;
+		//$this->helper->arrayTrans($subcats);
+		
+		$this->view->lang = $params['lang'];
+	} 
+	
 	public function referenceIndexAction()
 	{
 		$request = $this->getRequest();
@@ -242,9 +275,15 @@ class Content_NewIndexController extends Zend_Controller_Action
 		
 				
 		$root = $this->_model->getRootCategoryEntryByAlias($params['alias']);
+		$this->view->root = $root;
+		//$this->helper->arrayTrans($root);
 		$this->view->title = $root['title'];
 		
-		$items = $this->_model->getReferenceList(array($root['id']));
+		$current = $this->_model->getDependedCategoryEntryByParent($params['cat'], $root['id']);
+		$this->view->category = $current;
+		//$this->helper->arrayTrans($this->view->category);
+		
+		$items = $this->_model->getReferenceList(array($current['id']));
 		$this->view->count = count($items);
 		
 		$page = $request->getParam('page', 1);

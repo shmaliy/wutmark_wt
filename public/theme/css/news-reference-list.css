@@ -25,12 +25,30 @@
 	margin:3px 20px 0 0;
 }
 
+.news-reference-items .news-reference-item img.refer-category {
+	display:block;
+	float:left;
+	width:50px;
+	margin:3px 20px 0 0;
+}
+
 .news-reference-items .news-reference-item .text-container {
 	width:490px;
 	float:right;
 }
 
+.news-reference-items .news-reference-item .text-container-refer {
+	width:490px;
+	float:left;
+}
+
 .news-reference-items .news-reference-item .text-container .title {
+	display:block;
+	color:#0c6db7;
+	font-size:16px;
+	margin:0 0 5px 0;
+}
+.news-reference-items .news-reference-item .text-container-refer .title {
 	display:block;
 	color:#0c6db7;
 	font-size:16px;

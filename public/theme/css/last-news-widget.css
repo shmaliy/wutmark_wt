@@ -60,7 +60,19 @@
 	margin-top:-3px;
 }
 
+.latest-news-container .content-plashka .items .item .text-refer {
+	width:364px;
+	margin-top:-3px;
+}
+
 .latest-news-container .content-plashka .items .item .text .title {
+	display:block;
+	font-size:14px;
+	color:#3887c4;
+	margin:0 0 10px 0;
+}
+
+.latest-news-container .content-plashka .items .item .text-refer .title {
 	display:block;
 	font-size:14px;
 	color:#3887c4;
@@ -71,6 +83,12 @@
 	font-size:10px;
 	color:#555555;
 }
+
+.latest-news-container .content-plashka .items .item .text-refer .date {
+	font-size:10px;
+	color:#555555;
+}
+
 
 .latest-news-container .content-plashka .pages-plashka {
 	padding:0 17px 4px 11px;

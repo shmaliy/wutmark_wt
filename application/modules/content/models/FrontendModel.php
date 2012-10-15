@@ -87,6 +87,9 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');
 	
 		foreach ($items as &$item) {
+			if(empty($item['image'])) {
+				$item['image'] = '/contents/noimage.png';
+			}
 			$item['image'] = $this->_image->setImage($item['image'], 'thumbs_100px')->resizeToWidth(100);
 		}
 	
