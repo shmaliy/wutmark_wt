@@ -254,6 +254,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('production-index', $route);
         
+        /*  Продукция подкатегория  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/production/:cat_alias/:subcat_alias',
+        	array(
+              	'module' => 'production',
+               	'controller' => 'index',
+                'action'     => 'category',
+                'lang' => $lang,
+                'alias' => 'production'
+        	)
+        );
+        $router->addRoute('production-index-subcat', $route);
         
         /*  Продукция категория  */
         $route = new Zend_Controller_Router_Route(
@@ -269,18 +281,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('production-index-cat', $route);
         
-        /*  Продукция подкатегория  */
-        $route = new Zend_Controller_Router_Route(
-        	':lang/production/:cat_alias/:subcat_alias',
-        	array(
-              	'module' => 'production',
-               	'controller' => 'index',
-                'action'     => 'category',
-                'lang' => $lang,
-                'alias' => 'production'
-        	)
-        );
-        $router->addRoute('production-index-subcat', $route);
         
         
         

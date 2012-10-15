@@ -9,3 +9,6 @@ define('INDEX_ALL_REFERENCE_LINK', 'Все статьи');
 
 define('POSTED_ON', 'Опубликовано');
 define('PAGES', 'Страницы:');
+
+define('SUBCATEGORIES', 'Подкатегории');
+define('GOODS', 'Товары');

@@ -42,14 +42,13 @@ class Production_IndexController extends Zend_Controller_Action
 		
 		// Проверяем наличие товаров в категории
 		$goods_first =  $this->_model->getGoods($category['id']);	
-		$this->view->goods_first = $goods_first;
-		$this->_help->arrayTrans($goods_first);
+		$this->view->goods = $goods_first;
 		
 		// Вынимаем сптсок подкатегорий
 		if($subCategory == false) {
 			$subcats = $this->_model->getDependedCategoriesListByParent($category['id']);
-			$this->view->sucats_list = $subcats;
-			$this->_help->arrayTrans($subcats);
+			$this->view->subcats_list = $subcats;
+			//$this->_help->arrayTrans($subcats);
 		}
 		
 		
@@ -61,10 +60,18 @@ class Production_IndexController extends Zend_Controller_Action
 			
 			// Получаем товары из подкатегории
 			$goods_second =  $this->_model->getGoods($subCategory['id']);
-			$this->view->goods_second = $goods_second;
-			$this->_help->arrayTrans($goods_second);
+			$this->view->goods = $goods_second;
+			
 		}
 		
+		foreach ($this->view->goods as &$good) {
+			$good['file'] = str_replace(' ', '_', $good['title_alias']);
+			$good['file'] = str_replace('/', '+', $good['file']) . '.pdf';
+		}
+		
+		$this->view->lang = $params['lang'];
+		
+		//$this->_help->arrayTrans($this->view->goods);
 		
 	}
 	

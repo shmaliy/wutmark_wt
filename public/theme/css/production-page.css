@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+
+.subcategories-container {
+	width:610px;
+	margin:0 0 25px 0;
+}
+
+.subcategories-container .plashka-top {
+	width:610px;
+	height:30px;
+	background: url(/theme/img/goods_page/subcategories_plashka_top.png) top left no-repeat;
+}
+
+.subcategories-container .plashka-top span {
+	margin:0 12px 0px 12px;
+	padding-top:5px;	
+	font-size:16px;
+	color:#0493de;
+	display:block;
+}
+
+.subcategories-container .plashka-bottom {
+	width:610px;
+	height:16px;
+	background: url(/theme/img/goods_page/subcategories_plashka_bottom.png) bottom left no-repeat;
+}
+
+.subcategories-container .subcategories {
+	background:#ebebeb;
+	width:586px;
+	padding:15px 12px 10px 12px;
+}
+
+.subcategories-container .subcategories .subcategories-list {
+	margin:0;
+	padding:0;	
+	list-style:none;
+}
+
+.subcategories-container .subcategories .subcategories-list li {
+	margin:0;
+	padding:0;
+}
+
+.subcategories-container .subcategories .subcategories-list li a {
+	width:586px;
+	height:32px;
+	display:block;
+	background: url(/theme/img/goods_page/subcat_hohover_bg.png) bottom left repeat-x;
+	text-decoration:none;
+}
+
+.subcategories-container .subcategories .subcategories-list li a.hover {
+	width:586px;
+	height:32px;
+	display:block;
+	background: url(/theme/img/goods_page/subcat_hover_bg.png) top left no-repeat;
+	text-decoration:none;
+}
+
+.subcategories-container .subcategories .subcategories-list li a span {
+	padding:5px 10px 0 10px;
+	font-size:16px;
+	color:#6a6969;
+	display:block;
+}
+
+.subcategories-container .subcategories .subcategories-list li a.hover span {
+	padding:5px 10px 0 10px;
+	font-size:16px;
+	color:#0d6db6;
+	display:block;
+}
+
+
+.goods-container {
+	width:610px;
+	margin:0 0 25px 0;
+}
+
+.goods-container .goods-header {
+	background: url(/theme/img/goods_page/items_header_bg.png) top left no-repeat;
+	width:610px;
+	height:36px;
+	display:block;
+}
+
+.goods-container .goods-header span {
+	margin:0 12px 0px 12px;
+	padding-top:7px;	
+	font-size:16px;
+	color:#fff;
+	display:block;
+}
+
+.goods-container .goods {
+	width:610px;
+}
+
+.goods-container .goods td {
+	border-bottom:2px solid #d0cdcd;
+}
+
+.goods-container .goods td .good {
+	margin:10px;
+}
+
+.goods-container .goods td .get-pdf {
+	display:block;
+	width:16px;
+	height:16px;
+	background: url(/theme/img/goods_page/download.png) top left no-repeat;
+	float:right;
+	margin:10px;
+}

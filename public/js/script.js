@@ -105,8 +105,20 @@ function hoverMaker()
 	});
 }
 
+//Observe generic menu class toggle
+function prodCategoriesHoverMaker()
+{
+	$('.subcategories-list li a').each(function(){
+		$(this).hover(
+			function(){ $(this).addClass("hover"); },
+			function(){ $(this).removeClass("hover"); }
+		);
+	});
+}
+
 $(document).ready(function(){
 	$.fn.newsManager('init');
 	$.fn.refManager('init');
 	hoverMaker();
+	prodCategoriesHoverMaker();
 });

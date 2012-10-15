@@ -9,3 +9,6 @@ define('INDEX_ALL_REFERENCE_LINK', 'All Articles');
 
 define('POSTED_ON', 'Posted on');
 define('PAGES', 'Pages:');
+
+define('SUBCATEGORIES', 'Subcategories');
+define('GOODS', 'Goods');
