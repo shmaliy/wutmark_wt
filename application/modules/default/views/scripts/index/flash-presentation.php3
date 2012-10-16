@@ -1,7 +1,7 @@
 <?php if (!empty($this->items)) : ?>
 <div id='coin-slider'>
 	<?php foreach ($this->items as $item) : ?>
-	<a href="#">
+	<a href="<?php echo $this->url(array('id' => $item['id']), 'areas-of-use-item'); ?>">
 		<img src = "<?php echo $item['image']; ?>">
 		<span>
 			<?php echo $item['title']; ?>
