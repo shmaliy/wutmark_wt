@@ -126,3 +126,37 @@ ul.generic-menu li  ul li a {
 	margin:0 10px 0 0;
 	text-decoration:none;
 }
+
+ul.generic-menu li  ul li ul {
+	display:none;
+}
+
+ul.generic-menu li.hover  ul li ul {
+	display:none;
+}
+
+ul.generic-menu li.hover  ul li.hover ul {
+	display:block;
+	position: absolute;
+	top:0;
+	left:100%;
+	margin:0 15px 0 0;
+}
+
+ul.generic-menu li.hover  ul li.hover ul li a { 
+	font-size:14px;
+	font-weight:bold;
+	color:#0c6db7;
+	white-space:nowrap;
+	font-size:12px;
+} 
+
+ul.generic-menu li.hover  ul li.hover ul li.hover a { 
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	white-space:nowrap;
+	font-size:12px;
+} 
+
+
