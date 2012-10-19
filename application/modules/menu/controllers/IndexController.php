@@ -24,8 +24,8 @@ class Menu_IndexController extends Zend_Controller_Action
  				$tree = $this->_model->prodTree($root['id']);
  				//$this->helper->arrayTrans($tree);
  				foreach ($tree as $branch) {
+ 					$subsubmenu = array();
  					if (!empty($branch['childs']) && isset($branch['childs'])) {
- 						$subsubmenu = array();
  						foreach ($branch['childs'] as $child) {
  							$subsubmenu[] = array(
  							'title' => $child['title'],
