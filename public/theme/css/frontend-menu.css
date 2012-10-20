@@ -31,6 +31,12 @@ ul.generic-menu li a {
 	color:#0c6db7;
 }
 
+ul.generic-menu li span {
+	font-size:14px;
+	font-weight:bold;
+	color:#0c6db7;
+}
+
 ul.generic-menu li ul {
 	list-style:none;
 	margin:0;
@@ -44,6 +50,11 @@ ul.generic-menu li.hover {
 }
 
 ul.generic-menu li.hover a {
+	color:white;
+	text-decoration:none;
+}
+
+ul.generic-menu li.hover span {
 	color:white;
 	text-decoration:none;
 }

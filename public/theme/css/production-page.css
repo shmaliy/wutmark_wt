@@ -113,3 +113,10 @@
 	float:right;
 	margin:10px;
 }
+
+.good-item-image {
+	float: left;
+	margin: 3px 15px 10px 0;
+	outline: none;
+	border: none;
+}

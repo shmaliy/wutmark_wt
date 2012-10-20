@@ -83,7 +83,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $path = $path['path'];
 	    $path = explode('/', trim($path, '/'));
 	    if(empty($path[0])){
-	    	$lang = 'ru';
+	    	$lang = 'de';
 	    } else {
 	    	$lang = $path[0];
 	    }
