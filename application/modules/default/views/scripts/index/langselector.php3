@@ -25,9 +25,9 @@
 			}
 		?>		
 		<ul class="flags">
-			<li><a href="<?php echo $ruLink; ?>" class="langRU <?php if($lang == 'ru') { echo 'active'; }?>"></a></li>
-			<li><a href="<?php echo $enLink; ?>" class="langEN <?php if($lang == 'en') { echo 'active'; }?>"></a></li>
 			<li><a href="<?php echo $deLink; ?>" class="langDE <?php if($lang == 'de') { echo 'active'; }?>"></a></li>
+			<li><a href="<?php echo $enLink; ?>" class="langEN <?php if($lang == 'en') { echo 'active'; }?>"></a></li>
+			<li><a href="<?php echo $ruLink; ?>" class="langRU <?php if($lang == 'ru') { echo 'active'; }?>"></a></li>
 		</ul>
 	</div>
 </div>

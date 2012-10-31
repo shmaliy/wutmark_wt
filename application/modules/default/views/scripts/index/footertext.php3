@@ -1,1 +1,1 @@
-<div class="footerText">(c) WUTMARC LTD, 2003</div>
+<div class="footerText">&copy; WUTMARC LTD</div>

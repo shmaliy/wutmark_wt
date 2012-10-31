@@ -60,7 +60,7 @@
 			
 				
 			// create title bar
-			$('#'+el.id).append("<div class='cs-title' id='cs-title-"+el.id+"' style='position: absolute; bottom:0; left: 0; z-index: 1000;'></div>");
+			$('#'+el.id).append("<div class='cs-title' id='cs-title-"+el.id+"' style='position: absolute; bottom:-35px; left: 0; z-index: 1000;'></div>");
 						
 			$.setFields(el);
 			
