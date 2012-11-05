@@ -49,6 +49,12 @@ class Content_Model_FrontendModel extends My_Model_Abstract
 		return $items;
 	}
 	
+	public function getContentsList($id)
+	{
+		$items = $this->_getContentListByCategoryId($id, 'ordering', 'asc');
+		return $items;
+	}
+	
 	public function getNewsList($id)
 	{
 		$items = $this->_getContentListByCategoryId($id, 'created', 'desc');

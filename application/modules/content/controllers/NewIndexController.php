@@ -21,6 +21,20 @@ class Content_NewIndexController extends Zend_Controller_Action
 		
 	}
 	
+	public function contactsAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		//$this->helper->arrayTrans($params);
+		
+		$this->view->category = $this->_model->getRootCategoryEntryByAlias($params['cat-alias'], $params['lang']);
+		//$this->helper->arrayTrans($this->view->category);
+		
+		$this->view->items = $this->_model->getContentsList(array($this->view->category['id']));
+		//$this->helper->arrayTrans($this->view->items);
+		
+	}
+	
 	public function staticContentItemAction()
 	{
 		$request = $this->getRequest();
