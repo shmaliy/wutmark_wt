@@ -4,6 +4,7 @@ class IndexController extends Zend_Controller_Action
 {
     private $_model;
     private $_contentModel;
+    private $_image;
     
     public $helper;
 	
@@ -16,6 +17,7 @@ class IndexController extends Zend_Controller_Action
         $ajaxContext = $this->_helper->getHelper('AjaxContext');
        // $ajaxContext->addActionContext('indexnews', 'json');
         $ajaxContext->initContext('json');
+        $this->_image = new My_Image_Image();
 	}
 
     public function indexAction()
@@ -40,6 +42,19 @@ class IndexController extends Zend_Controller_Action
     	$form->getElement('sites')->setAttrib(array('class'=>'sites'));
     	
     	$this->view->form = $form;
+    }
+    
+    public function downloadBookAction()
+    {
+    	$request = $this->getRequest();
+    	$params = $request->getParams();
+    	//$this->helper->arrayTrans($params);
+    	
+    	$item = $this->_contentModel->getStaticContentItem($params['book']);
+    	$item['image'] = $this->_image->setImage($item['image'], 'thumbs_200px')->resizeToWidth(200);
+    	//$this->helper->arrayTrans($item);
+    	
+    	$this->view->item = $item;
     }
     
     public function flashPresentationAction()

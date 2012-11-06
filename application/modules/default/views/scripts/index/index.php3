@@ -11,6 +11,7 @@
 		)); ?>
 	</div>
 	<div class="right">
+		<?php echo $this->action('download-book', 'index', 'default', array('book' => 'info-book')); ?>
 		<?php echo $this->action('last-news', 'new-index', 'content'); ?>
 	</div>
 	<div class="clear"></div>

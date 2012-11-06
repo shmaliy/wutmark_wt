@@ -1,5 +1,5 @@
 <?php
-define('CONCURENTS_SELECT_TITLE', 'Selection of material on the range of competitors');
+define('CONCURENTS_SELECT_TITLE', 'Comparative table with the products of other manufacturers');
 define('LAST_NEWS_TITLE', 'Latest News');
 define('INDEX_ALL_NEWS_LINK', 'All News');
 define('OUR_PRODUCTION_TITLE', 'Our production');
@@ -12,3 +12,5 @@ define('PAGES', 'Pages:');
 
 define('SUBCATEGORIES', 'Subcategories');
 define('GOODS', 'Goods');
+
+define('BOOK', 'Information booklet');

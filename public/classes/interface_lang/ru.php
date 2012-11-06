@@ -1,5 +1,5 @@
 <?php
-define('CONCURENTS_SELECT_TITLE', 'Подбор материала по номенклатуре конкурентов');
+define('CONCURENTS_SELECT_TITLE', 'Сравнительная таблица с продукцией других производителей');
 define('LAST_NEWS_TITLE', 'Последние новости');
 define('INDEX_ALL_NEWS_LINK', 'Все новости');
 define('OUR_PRODUCTION_TITLE', 'Наша продукция');
@@ -12,3 +12,5 @@ define('PAGES', 'Страницы:');
 
 define('SUBCATEGORIES', 'Подкатегории');
 define('GOODS', 'Товары');
+
+define('BOOK', 'Информационный буклет');
