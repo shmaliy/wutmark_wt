@@ -1,3 +1,4 @@
+<?php if (!empty($this->item) && is_array($this->item) && isset($this->item)) : ?>
 <div class="latest-news-container" style="margin:0 0 20px 0;">
 	<div class="title-plashka">
 		<div class="title"><?php echo BOOK; ?></div>
@@ -11,3 +12,4 @@
 	</div>
 	<div class="bottom-plashka"></div>
 </div>
+<?php endif; ?>
