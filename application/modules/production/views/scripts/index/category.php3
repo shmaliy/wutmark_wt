@@ -12,7 +12,6 @@
 	}
 ?>
 
-
 <div class="index-container">
 	<div class="left">
 		<h1><?php 
@@ -51,18 +50,28 @@
 				<span><?php echo GOODS; ?></span>
 			</div>
 			<table cellpadding="0" cellspacing="0" class="goods">
-				<?php foreach ($this->goods as $good) : ?>
+				<?php $i = 0; ?>
 				<tr>
+				<?php foreach ($this->goods as $good) : ?>
+					<td class="separator"></td>
 					<td>
-						<div class="good"><?php echo $good['title']?></div>
-					</td>
-					<td>
+						<div class="good">
 						<?php if (is_file('contents/production/' . $good['file'])) : ?>
-							<a target="_blank" class="get-pdf" href="/contents/production/<?php echo $good['file']; ?>"></a>
+							<a target="_blank" href="/contents/production/<?php echo $good['file']; ?>"><span><?php echo $good['title']?></span></a>
+						<?php else: ?>
+							<span><?php echo $good['title']?></span>
 						<?php endif; ?>
+						</div>
 					</td>
-				</tr>
+					
+					<?php $i++; ?>
+					<?php if ($i == 2) : ?>
+					<?php $i = 0; ?>
+					</tr><tr>
+					<?php endif; ?>
+				
 				<?php endforeach; ?>
+				</tr>
 			</table>
 		</div> 
 		<?php endif; ?>

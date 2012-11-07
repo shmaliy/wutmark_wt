@@ -99,10 +99,37 @@
 
 .goods-container .goods td {
 	border-bottom:2px solid #d0cdcd;
+	height:33px;
 }
 
 .goods-container .goods td .good {
-	margin:10px;
+	margin:0;
+}
+
+.goods-container .goods td .good a {
+	font-weight:bold;
+	text-decoration:none;
+	display:block;
+	width:100%;
+	height:33px;
+}
+
+.goods-container .goods td .good a span,
+.goods-container .goods td .good span {
+	display:block;
+	padding:9px 0 0 10px;
+}
+
+.goods-container .goods td .good a:hover {
+	font-weight:bold;
+	text-decoration:underline;
+	background:#F5F5F5;
+}
+
+
+.goods-container .goods td.separator {
+	width:20px;
+	background:#F0F0F0;
 }
 
 
