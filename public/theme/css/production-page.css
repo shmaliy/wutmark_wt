@@ -120,9 +120,17 @@
 	padding:9px 0 0 10px;
 }
 
+.goods-container .goods td .good a span sup {
+	text-decoration:none !important;
+}
+
+.goods-container .goods td .good a:hover span sup {
+	text-decoration:none !important;
+}
+
 .goods-container .goods td .good a:hover {
 	font-weight:bold;
-	text-decoration:underline;
+	text-decoration:none;
 	background:#F5F5F5;
 }
 

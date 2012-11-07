@@ -78,7 +78,7 @@
 	</div>
 	<div class="right">
 		<div id="last-news-container">
-			<?php echo $this->action('last-news', 'new-index', 'content'); ?>
+			<?php echo $this->action('download-book', 'index', 'default', array('book' => 'info-book')); ?>
 		</div>
 	</div>
 	<div class="clear"></div>
