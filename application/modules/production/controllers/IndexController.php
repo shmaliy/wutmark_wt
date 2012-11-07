@@ -67,6 +67,7 @@ class Production_IndexController extends Zend_Controller_Action
 		foreach ($this->view->goods as &$good) {
 			$good['file'] = str_replace(' ', '_', $good['title_alias']);
 			$good['file'] = str_replace('/', '+', $good['file']) . '.pdf';
+			$good['title'] = str_replace('®', '<sup>®</sup>',$good['title']);
 		}
 		
 		$this->view->lang = $params['lang'];
