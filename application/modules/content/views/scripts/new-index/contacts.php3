@@ -2,23 +2,17 @@
 <div class="index-container">
 	<div class="left">
 		<h1><?php echo $this->category['title']; ?></h1>
-		<div class="contacts-container">
-			<ul class="contacts-list">
-				<?php foreach ($this->items as $item) : ?>
-				<li>
-					<img src="<?php echo $item['image']; ?>">
-					<a href="#" onclick="showContact('contact_<?php echo $item['id']; ?>');"><?php echo $item['title']; ?></a>
-					<div class="clear"></div>
-					<span class="extend" id="contact_<?php echo $item['id']; ?>" >
-						<img class="cont-image" src="<?php echo $item['image']; ?>">
-						<span class="cont-title"><?php echo $item['title']; ?></span>
-						<a href="#" class="close" onclick="hideContact('contact_<?php echo $item['id']; ?>');"></a>
-						<div class="clear"></div>
-						<span class="cont-text"><?php echo $item['introtext']; ?></span>
-					</span>
-				</li>
-				<?php endforeach;?>
-			</ul>
+		<div id="accordion"  class="accordion">
+		    <?php foreach ($this->items as $item) : ?>
+		    <h3 style="background: url('<?php echo $item['image']; ?>') no-repeat 5px center;">
+		    	<span style="display:block; margin:0 0 0 15px;"><?php echo $item['title']; ?></span>
+		    </h3>
+		    <div style="margin:0 0 10px 0;">
+		        <p style="margin:0 0 0 15px;">
+		        	<?php echo $item['introtext']; ?>
+		        </p>
+		    </div>
+		    <?php endforeach;?>
 		</div>
 	</div>
 	<div class="right">
@@ -34,17 +28,3 @@
 	</div>
 	
 </div>
-<script>
-function showContact(id)
-{
-	$('.contacts-list > li > .extend').css('display', 'none');
-		
-	$('#'+id).css('display', 'block');
-}
-
-function hideContact(id)
-{
-	$('#'+id).css('display', 'none');
-}
-
-</script>

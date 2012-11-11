@@ -9,6 +9,7 @@
 <?php $this->headLink()->appendStylesheet('/theme/css/style.css')
 					   ->appendStylesheet('/theme/css/swf.css')
 					   ->appendStylesheet('/js/coin-slider/coin-slider-styles.css')
+					   ->appendStylesheet('/js/jquery/jquery-ui-1.9.0.custom/css/ui-lightness/jquery-ui-1.9.0.custom.css')
 					   ->headLink(array('rel' => 'favicon', 'href' => '/favicon.png'), 'PREPEND'); ?>
 <?
 	$this->headMeta()->appendName('keywords', '')
@@ -31,6 +32,14 @@
 	$this->headScript()->appendFile('/js/coin-slider/coin-slider.js');
 	echo $this->headScript();
 ?>
+
+<script>
+$(function() {
+    $( "#accordion" ).accordion({
+        heightStyle: "content"
+    });
+});
+</script>
 
 </head>
 <body>
