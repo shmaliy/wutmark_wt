@@ -14,3 +14,12 @@ define('SUBCATEGORIES', 'Subcategories');
 define('GOODS', 'Goods');
 
 define('BOOK', 'Information booklet');
+
+define('CUSTOMER_SUPPORT_TITLE', 'Customer support');
+define('CUSTOMER_SUPPORT_NAME', 'Your name');
+define('CUSTOMER_SUPPORT_PHONE', 'Telephone number');
+define('CUSTOMER_SUPPORT_EMAIL', 'E-mail');
+define('CUSTOMER_SUPPORT_QUESTION', 'Your question');
+define('CUSTOMER_SUPPORT_SEND', 'Send');
+
+define('CUSTOMER_SUPPORT_NAME_IS_EMPTY', 'Please fill in your name');

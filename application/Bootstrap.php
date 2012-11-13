@@ -190,6 +190,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('ajax-last-news', $route);
         
+        /*  Ajax support  */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/support',
+        	array(
+               	'module' => 'default',
+                'controller' => 'index',
+                'action'     => 'support',
+        		'lang' => $lang
+        	)
+        );
+        $router->addRoute('ajax-support', $route);
+        
         /*  Ajax news  */
         $route = new Zend_Controller_Router_Route(
         	'content/new-index/last-reference/*',

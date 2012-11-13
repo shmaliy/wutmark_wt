@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+#CustomerSupport {
+	width:324px;
+	margin:0 auto;
+}
+
+#CustomerSupport dt {
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+#CustomerSupport dd {
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+#CustomerSupport input {
+	width:324px;
+}
+
+#CustomerSupport textarea {
+	width:324px;
+	height:100px;
+}

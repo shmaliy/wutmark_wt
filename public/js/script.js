@@ -1,5 +1,93 @@
 (function( $ ) {
 	
+	var container = '#support';
+	var baseUrl = '/' + lang + '/support/';
+	
+	var methods = {
+		init: function () {
+			//$(this).newsManager('request', baseUrl);	
+		},
+		
+		request: function ()
+		{
+			console.log('request');
+			//$(container).html('<div class="loader"></div>');
+			$.ajax({
+				url: baseUrl,
+				data: $('#CustomerSupport').serialize(),
+				type: 'POST',
+				error: function(jqXHR, textStatus, errorThrown) {
+					
+				},
+				success: function(data, textStatus, jqXHR) {
+					//$(container).html(jqXHR.responseText);
+					var response = jQuery.parseJSON(jqXHR.responseText);
+					
+					if (response['formErrors']) {
+						var nameErrors = response['formErrors']['name'].length;
+					} else {
+						var nameErrors = 0;
+					}
+					
+					if (response['formErrors']) {
+						var phoneErrors = response['formErrors']['phone'].length;
+					} else {
+						var phoneErrors = 0;
+					}
+					
+					if (response['formErrors']) {
+						var emailErrors = response['formErrors']['email'].length;
+					} else {
+						var emailErrors = 0;
+					}
+					if (response['formErrors']) {
+						var questionErrors = response['formErrors']['question'].length;
+					} else {
+						var questionErrors = 0;
+					}
+					
+					
+					if (nameErrors+phoneErrors+emailErrors+questionErrors > 0) {
+						
+					} else {
+						
+					}
+				},
+				complete: function(jqXHR, textStatus) {
+										
+				}
+			});
+			return false;
+		},
+		
+		errorsHide: function ()
+		{
+			var fields = $('#CustomerSupport > dd');
+		},
+		
+		parseErrors: function (messages)
+		{
+			
+		}
+	};
+	
+	$.fn.supportManager = function( method ) {
+  
+		if ( methods[method] ) {
+			return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		} else if ( typeof method === 'object' || ! method ) {
+			return methods.init.apply( this, arguments );
+		} else {
+			$.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' );
+		}    
+
+	};
+})( jQuery );
+
+
+
+(function( $ ) {
+	
 	var container = '#latest-news-contaioner';
 	var baseUrl = '/content/new-index/last-news/limit/5/offset/0/category/news/page/1/first/true/lang/' + lang;
 	

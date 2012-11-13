@@ -14,3 +14,12 @@ define('SUBCATEGORIES', 'Подкатегории');
 define('GOODS', 'Товары');
 
 define('BOOK', 'Информационный буклет');
+
+define('CUSTOMER_SUPPORT_TITLE', 'Поддержка клиентов');
+define('CUSTOMER_SUPPORT_NAME', 'Ваше имя');
+define('CUSTOMER_SUPPORT_PHONE', 'Контактный телефон');
+define('CUSTOMER_SUPPORT_EMAIL', 'Эл. почта');
+define('CUSTOMER_SUPPORT_QUESTION', 'Ваш вопрос');
+define('CUSTOMER_SUPPORT_SEND', 'Отправить');
+
+define('CUSTOMER_SUPPORT_NAME_IS_EMPTY', 'Укажите пожалуйста ваше имя');

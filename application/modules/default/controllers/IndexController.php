@@ -15,7 +15,7 @@ class IndexController extends Zend_Controller_Action
         $this->helper = $this->_model->helper;
     	
         $ajaxContext = $this->_helper->getHelper('AjaxContext');
-       // $ajaxContext->addActionContext('indexnews', 'json');
+        $ajaxContext->addActionContext('support', 'json');
         $ajaxContext->initContext('json');
         $this->_image = new My_Image_Image();
 	}
@@ -32,6 +32,34 @@ class IndexController extends Zend_Controller_Action
     	$params = $request->getParams();
     } 
     
+   	public function supportAction()
+   	{
+   		$request = $this->getRequest();
+   		$params = $request->getParams();
+   		$this->view->params = $params;
+   		
+   		$form = new Application_Form_CustomerSupport();
+   		$form->setAction($this->view->url(array('lang' => $params['lang']), 'ajax-support'));
+   		
+   		$form->getElement('name')->setLabel(CUSTOMER_SUPPORT_NAME);
+   		$form->getElement('phone')->setLabel(CUSTOMER_SUPPORT_PHONE);
+   		$form->getElement('email')->setLabel(CUSTOMER_SUPPORT_EMAIL);
+   		$form->getElement('question')->setLabel(CUSTOMER_SUPPORT_QUESTION);
+   		$form->getElement('submit')->setLabel(CUSTOMER_SUPPORT_SEND);
+   		
+   		if ($request->isXmlHttpRequest() || $request->isPost()) {
+   			
+   			if ($form->isValid($request->getParams())) {
+   				$values = $form->getValues();
+   			} else {
+   				$this->view->formErrors        = $form->getErrors();
+   				$this->view->formErrorMessages = $form->getMessages();
+   			}
+   		} else {
+   			$this->view->form = $form;
+   		}
+   	}
+    
 	public function sitesselectorAction()
     {
     	$request = $this->getRequest();
@@ -40,7 +68,6 @@ class IndexController extends Zend_Controller_Action
     	$form = new Application_Form_Sites();
     	$form->getElement('sites')->setMultiOptions($form->sites('http://wt.wutmarc.com'));
     	$form->getElement('sites')->setAttrib(array('class'=>'sites'));
-    	
     	$this->view->form = $form;
     }
     

@@ -14,7 +14,7 @@
 	</div>
 	<div class="right">
 		<?php echo $this->action('download-book', 'index', 'default', array('book' => 'info-book')); ?>
-		<?php echo $this->action('last-news', 'new-index', 'content'); ?>
+		<?php echo $this->action('support', 'index', 'default'); ?>
 	</div>
 	<div class="clear"></div>
 	<div class="full-width">

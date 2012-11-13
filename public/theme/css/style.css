@@ -9,6 +9,7 @@
 @import "/theme/css/news-reference-list.css" screen; /* Стиль для менеджера кеширования */
 @import "/theme/css/production-page.css" screen; /* Стиль для менеджера кеширования */
 @import "/theme/css/contacts.css" screen; /* Стиль для менеджера кеширования */
+@import "/theme/css/support.css" screen; /* Стиль для менеджера кеширования */
 
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
