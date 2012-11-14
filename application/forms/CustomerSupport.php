@@ -70,7 +70,7 @@ class Application_Form_CustomerSupport extends My_Form
 		$this->getElement('email')->addValidator(
 			'EmailAddress',
 			true,
-			array('messages' => array('emailAddressInvalidFormat' => $phoneNotDigits))
+			array('messages' => array('emailAddressInvalidFormat' => $emailAddressInvalidFormat))
 		);
 		
 		$this->addElement('textarea', 'question', array(

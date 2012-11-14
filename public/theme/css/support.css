@@ -7,7 +7,7 @@
 
 #CustomerSupport dt {
 	margin:0;
-	padding:0;
+	padding:0 0 3px 0;
 	font-weight:bold;
 }
 
@@ -24,3 +24,26 @@
 	width:324px;
 	height:100px;
 }
+
+#CustomerSupport #submit-element .form-loader {
+	width:43px;
+	height:11px;
+	margin:10px auto;
+	background:url(/theme/img/form-loader.gif) top left no-repeat;
+}
+
+#CustomerSupport .form-error {
+	margin:5px 0 15px 0;
+	background:url(/theme/img/error.png) no-repeat 5px 5px ;
+	padding:5px 5px 5px 25px;
+	color:red;
+	border-bottom:1px dashed #ccc;
+}
+
+#support .success {
+	margin:5px 20px 15px 20px;
+	background:url(/theme/img/ok.gif) no-repeat 5px 5px ;
+	padding:5px 5px 5px 25px;
+	color:green;
+}
+

@@ -5,13 +5,17 @@
 	
 	var methods = {
 		init: function () {
-			//$(this).newsManager('request', baseUrl);	
+			$('#submit-element').append('<div class="form-loader"><div>');
+			$('.form-loader').hide();
 		},
 		
 		request: function ()
 		{
+			$(this).supportManager('errorsHide');
 			console.log('request');
 			//$(container).html('<div class="loader"></div>');
+			$('#submit-element > #submit').hide();
+			$('.form-loader').show();
 			$.ajax({
 				url: baseUrl,
 				data: $('#CustomerSupport').serialize(),
@@ -48,9 +52,11 @@
 					
 					
 					if (nameErrors+phoneErrors+emailErrors+questionErrors > 0) {
-						
+						$(this).supportManager('parseErrors', response['formErrorMessages']);
+						$('.form-loader').hide();
+						$('#submit-element > #submit').show();
 					} else {
-						
+						$('#support').html('<div class="success">' + response['success'] + '</div>')
 					}
 				},
 				complete: function(jqXHR, textStatus) {
@@ -62,12 +68,24 @@
 		
 		errorsHide: function ()
 		{
-			var fields = $('#CustomerSupport > dd');
+			$('.form-error').remove();
+			
+//			var fields = $('#CustomerSupport dd .form-error');
+//			
+//			for (var i=0; i<fields.length; $i++) {
+//				fields[i].remove();
+//			}
 		},
 		
 		parseErrors: function (messages)
 		{
-			
+			for (var key in messages) {
+				console.log(key);
+				for ( var subkey in messages[key]) {
+					console.log('-- ' +  messages[key][subkey][lang]);
+					$('#' + key + '-element').append('<div class="form-error">' +  messages[key][subkey][lang] + '</div>');
+				}
+			}
 		}
 	};
 	
@@ -207,6 +225,7 @@ function prodCategoriesHoverMaker()
 $(document).ready(function(){
 	$.fn.newsManager('init');
 	$.fn.refManager('init');
+	$.fn.supportManager('init');
 	hoverMaker();
 	prodCategoriesHoverMaker();
 });

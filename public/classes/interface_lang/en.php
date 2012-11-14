@@ -23,3 +23,4 @@ define('CUSTOMER_SUPPORT_QUESTION', 'Your question');
 define('CUSTOMER_SUPPORT_SEND', 'Send');
 
 define('CUSTOMER_SUPPORT_NAME_IS_EMPTY', 'Please fill in your name');
+define('CUSTOMER_SUPPORT_SUCCESS', 'Message has been sent');

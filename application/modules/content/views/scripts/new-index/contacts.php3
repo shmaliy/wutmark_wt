@@ -7,7 +7,7 @@
 		    <h3 style="background: url('<?php echo $item['image']; ?>') no-repeat 5px center;">
 		    	<span style="display:block; margin:0 0 0 15px;"><?php echo $item['title']; ?></span>
 		    </h3>
-		    <div style="margin:0 0 10px 0;">
+		    <div>
 		        <p style="margin:0 0 0 15px;">
 		        	<?php echo $item['introtext']; ?>
 		        </p>
@@ -17,7 +17,7 @@
 	</div>
 	<div class="right">
 		<div id="last-news-container">
-			<?php echo $this->action('last-news', 'new-index', 'content'); ?>
+			<?php echo $this->action('support', 'index', 'default'); ?>
 		</div>
 	</div>
 	<div class="clear"></div>

@@ -5,6 +5,7 @@ class IndexController extends Zend_Controller_Action
     private $_model;
     private $_contentModel;
     private $_image;
+    private $_receiver;
     
     public $helper;
 	
@@ -18,6 +19,7 @@ class IndexController extends Zend_Controller_Action
         $ajaxContext->addActionContext('support', 'json');
         $ajaxContext->initContext('json');
         $this->_image = new My_Image_Image();
+        $this->_receiver = 'shmaliy.maxim@gmail.com';
 	}
 
     public function indexAction()
@@ -36,7 +38,7 @@ class IndexController extends Zend_Controller_Action
    	{
    		$request = $this->getRequest();
    		$params = $request->getParams();
-   		$this->view->params = $params;
+   		//$this->view->params = $params;
    		
    		$form = new Application_Form_CustomerSupport();
    		$form->setAction($this->view->url(array('lang' => $params['lang']), 'ajax-support'));
@@ -51,6 +53,25 @@ class IndexController extends Zend_Controller_Action
    			
    			if ($form->isValid($request->getParams())) {
    				$values = $form->getValues();
+   				
+   				$headers  = 'MIME-Version: 1.0' . "\r\n";
+   				$headers .= 'Content-type: text/html; windows-1251' . "\r\n";
+   				
+   				// Additional headers
+   				$headers .= 'To: <' . $this->_receiver . '>' . "\r\n";
+   				$headers .= 'From: <feedback@' . $_SERVER['HTTP_HOST'] . '> ' . "\r\n";
+   				
+   				$subject = 'Обратная связь с сайта ' . $_SERVER['HTTP_HOST'];
+   				$message = '<b>Имя</b> ' . $values['name'] . '<br />';
+   				if (isset($values['phone']) && !empty($values['phone'])) {
+   					$message .= '<b>Контактный телефон</b>' . $values['phone'] . '<br />';
+   				}
+   				$message .= '<b>Эл. адрес</b> ' . $values['email'] . '<br />';
+   				$message .= '<b>Вопрос</b> ' . $values['question'];
+   				$message =  iconv('utf-8', 'windows-1251', $message);
+   				
+   				mail($this->_receiver, $subject, $message, $headers);
+				$this->view->success = CUSTOMER_SUPPORT_SUCCESS;   				
    			} else {
    				$this->view->formErrors        = $form->getErrors();
    				$this->view->formErrorMessages = $form->getMessages();
