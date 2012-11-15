@@ -19,7 +19,7 @@ class IndexController extends Zend_Controller_Action
         $ajaxContext->addActionContext('support', 'json');
         $ajaxContext->initContext('json');
         $this->_image = new My_Image_Image();
-        $this->_receiver = 'shmaliy.maxim@gmail.com';
+        $this->_receiver = 'a.zelensky@ukrnichrom.com';
 	}
 
     public function indexAction()
@@ -81,6 +81,15 @@ class IndexController extends Zend_Controller_Action
    		}
    	}
     
+   	public function indexSupportAction()
+   	{
+   		$request = $this->getRequest();
+   		$params = $request->getParams();
+   		//$this->view->params = $params;
+   		
+   		
+   	} 
+   	
 	public function sitesselectorAction()
     {
     	$request = $this->getRequest();

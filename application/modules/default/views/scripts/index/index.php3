@@ -11,6 +11,8 @@
 			'alias' => 'seo'
 		)); ?>
 		
+		<?php echo $this->action('index-support', 'index', 'default'); ?>
+		
 	</div>
 	<div class="right">
 		<?php echo $this->action('download-book', 'index', 'default', array('book' => 'info-book')); ?>

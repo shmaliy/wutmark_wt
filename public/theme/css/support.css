@@ -47,3 +47,39 @@
 	color:green;
 }
 
+.index-support {
+	width:610px;
+	margin: 15px 0 0 0;
+}
+
+.index-support .img {
+	float:left;
+	width:130px;
+	height:130px;
+	background:url(/theme/img/support.png) no-repeat;
+	margin:0 15px 0 0;
+}
+
+.index-support .container {
+	float:left;
+	width:464px;
+	padding:20px 0 0 0;
+}
+
+.index-support .container .title {
+	font-size: 18px;
+	color:#3485c3;
+	margin: 0 0 10px 0;	
+}
+
+.index-support .container .text {
+	font-size: 14px;
+	font-weight:bold;
+	color:#6A6A6A;
+	padding:0 0 10px 0;
+	border-bottom:1px dashed #ccc;
+}
+
+.index-support .container .text a {
+	color:#6A6A6A;
+}

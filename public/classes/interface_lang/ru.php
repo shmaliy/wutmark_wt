@@ -24,3 +24,7 @@ define('CUSTOMER_SUPPORT_SEND', 'Отправить');
 
 define('CUSTOMER_SUPPORT_NAME_IS_EMPTY', 'Укажите пожалуйста ваше имя');
 define('CUSTOMER_SUPPORT_SUCCESS', 'Сообщение успешно отправлено');
+
+define('CUSTOMER_SUPPORT_INDEX_TITLE', 'У вас возникли вопросы?');
+define('CUSTOMER_SUPPORT_INDEX_TEXT', 'Вы можете обратиться к нам, используя <a href="/*lang*/contacts">контактные данные</a> нашей компании в вашей или ближайшей к вам стране 
+			или задать нам вопрос с помощью <a href="/*lang*/contacts">формы обратной связи</a>.');
