@@ -1,6 +1,6 @@
 <div class="plashka-top">
 	<a class="tab-native" id="tab-native" onclick="$.fn.catWidget('tabNative');"><span><?php echo OUR_PRODUCTION_TITLE;?></span></a>
-	<a class="tab-concurents" id="tab-concurents" onclick="$.fn.catWidget('tabConcurents');"><span><?php echo CONCURENTS_SELECT_TITLE;?></span></a>
+	<a class="tab-concurents" id="tab-concurents" href="<?php echo $this->url(array(), 'product-search');?>"><span><?php echo CONCURENTS_SELECT_TITLE;?></span></a>
 	<div class="clear"></div>
 </div>
 <div class="plashka-middle">

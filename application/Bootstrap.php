@@ -124,7 +124,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    $router->addRoute('contacts', $route);
 	    
 	    
-	    
+	    /*  Поиск материалов  */
+	    $route = new Zend_Controller_Router_Route(
+	    	':lang/product-search',
+	    	array(
+	    	  	'module' => 'production',
+	    	    'controller' => 'index',
+	    	    'action'     => 'select-by-other-brand',
+	    		'lang' => $lang
+	    	)
+	    );
+	    $router->addRoute('product-search', $route);
 	    
 	    /*  Области применения главная  */
 	    $route = new Zend_Controller_Router_Route(

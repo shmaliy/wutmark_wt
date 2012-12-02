@@ -20,6 +20,48 @@ class Production_IndexController extends Zend_Controller_Action
     	$this->view->title = $root['title'];
 	}
 	
+	public function selectByOtherBrandAction() 
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		
+		$root = $this->_model->getRootCategoryEntryByAlias('production');
+		$items = $this->_model->getCategoriesTree($root['id']);
+		
+		foreach ($items as &$first) {
+			$fgoods = $this->_model->getGoods($first['id']);
+			
+			foreach ($fgoods as &$fgood) {
+				$other = strip_tags($fgood['other_brands']);
+				if (!empty($other)) {
+					$fgood['other_brands'] = explode(', ', $other);
+				}
+			}
+			
+			$first['goods'] =  $fgoods;
+			
+			
+			if (!empty($first['childs'])) {
+				$second['goods'] = array();
+				foreach ($first['childs'] as &$second) {
+					$goods = $this->_model->getGoods($second['id']);
+					
+ 					foreach ($goods as &$good) {
+ 						$other = strip_tags($good['other_brands']);
+ 						if (!empty($other)) {
+ 							$good['other_brands'] = explode(', ', $other);
+ 						}
+ 					}
+					
+					$second['goods'] = $goods;
+				}
+			}
+		}
+		//$this->_help->arrayTrans($items);
+		
+		$this->view->tree = json_encode($items);
+	}
+	
 	public function categoryAction()
 	{
 		$request = $this->getRequest();
