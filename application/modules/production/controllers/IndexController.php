@@ -36,6 +36,10 @@ class Production_IndexController extends Zend_Controller_Action
 				if (!empty($other)) {
 					$fgood['other_brands'] = explode(', ', $other);
 				}
+				$fname = str_replace(' ', '_', $fgood['title_alias']);
+				$fname = str_replace('/', '+', $fname) . '.pdf';
+				
+				$fgood['file'] = '/contents/production/' . $fname;
 			}
 			
 			$first['goods'] =  $fgoods;
@@ -51,6 +55,10 @@ class Production_IndexController extends Zend_Controller_Action
  						if (!empty($other)) {
  							$good['other_brands'] = explode(', ', $other);
  						}
+ 						$fname = str_replace(' ', '_', $good['title_alias']);
+ 						$fname = str_replace('/', '+', $fname) . '.pdf';
+ 						
+ 						$good['file'] = '/contents/production/' . $fname;
  					}
 					
 					$second['goods'] = $goods;

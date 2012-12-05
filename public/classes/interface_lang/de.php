@@ -28,3 +28,13 @@ define('CUSTOMER_SUPPORT_SUCCESS', 'Mitteilung wurde gesendet');
 define('CUSTOMER_SUPPORT_INDEX_TITLE', 'Haben Sie Fragen?');
 define('CUSTOMER_SUPPORT_INDEX_TEXT', 'Sie erreichen uns über die <a href="/*lang*/contacts">Kontaktdaten</a> unseres Unternehmens im eigenen oder Ihren nächsten Land
 oder eine Frage stellen via <a href="/*lang*/contacts">Feedback-Formular</a>.');
+
+define('SEARCH_TITLE', 'Подбор материала по номенклатуре других производителей');
+
+define('SEARCH_MARC', 'Введите марку');
+define('SEARCH_BUTTON', 'Поиск');
+define('SEARCH_SETTINGS', 'Настройки поиска');
+define('SEARCH_MATERIAL', 'Материал');
+define('SEARCH_TARGET', 'Назначение');
+define('SEARCH_SELECT_MATERIAL', 'Выберите материал');
+define('SEARCH_SELECT_TARGET', 'Выберите назначение');
