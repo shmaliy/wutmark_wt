@@ -108,10 +108,12 @@ class IndexController extends Zend_Controller_Action
     	//$this->helper->arrayTrans($params);
     	
     	$item = $this->_contentModel->getStaticContentItem($params['book']);
-    	$item['image'] = $this->_image->setImage($item['image'], 'thumbs_200px')->resizeToWidth(200);
-    	//$this->helper->arrayTrans($item);
-    	
-    	$this->view->item = $item;
+    	if (!empty($item)) {
+	    	$item['image'] = $this->_image->setImage($item['image'], 'thumbs_200px')->resizeToWidth(200);
+	    	//$this->helper->arrayTrans($item);
+	    	
+	    	$this->view->item = $item;
+    	}
     }
     
     public function flashPresentationAction()

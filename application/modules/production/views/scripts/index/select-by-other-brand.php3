@@ -45,8 +45,16 @@ $this->headTitle();
 
 <script>
 var tree = <?php echo $this->tree;?>;
+var brands = ["<?php echo implode('", "', $this->autocomplete); ?>"];
 $('#extend').hide();
 setCat();
+
+$(function() {
+    var availableTags = brands;
+    $( "#string" ).autocomplete({
+        source: availableTags
+    });
+});
 
 function search(marc, cat, subcat) 
 {
@@ -124,7 +132,11 @@ function selectInSubcat(marc, cat, subcat)
 
 function insertResult(title, url)
 {
-	$('#search_result').append('<a href ="' + url + '" class="resultItem">' + title + '</a>');
+	if (url == 'none') {
+		$('#search_result').append('<div>' + title + '</div>');
+	} else {
+		$('#search_result').append('<a href ="' + url + '" class="resultItem">' + title + '</a>');
+	}
 }
 
 function setCat()

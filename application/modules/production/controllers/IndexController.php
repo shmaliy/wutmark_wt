@@ -28,6 +28,8 @@ class Production_IndexController extends Zend_Controller_Action
 		$root = $this->_model->getRootCategoryEntryByAlias('production');
 		$items = $this->_model->getCategoriesTree($root['id']);
 		
+		$brands = array();
+		
 		foreach ($items as &$first) {
 			$fgoods = $this->_model->getGoods($first['id']);
 			
@@ -35,11 +37,19 @@ class Production_IndexController extends Zend_Controller_Action
 				$other = strip_tags($fgood['other_brands']);
 				if (!empty($other)) {
 					$fgood['other_brands'] = explode(', ', $other);
+					foreach ($fgood['other_brands'] as $brand) {
+						$brands[] = $brand;
+					}
 				}
 				$fname = str_replace(' ', '_', $fgood['title_alias']);
 				$fname = str_replace('/', '+', $fname) . '.pdf';
+				$file = '/contents/production/' . $fname;
 				
-				$fgood['file'] = '/contents/production/' . $fname;
+				$fgood['file'] = 'none';;
+				if (is_file(ltrim($file, '/'))) {
+					$fgood['file'] = $file;
+				}
+				
 			}
 			
 			$first['goods'] =  $fgoods;
@@ -54,20 +64,32 @@ class Production_IndexController extends Zend_Controller_Action
  						$other = strip_tags($good['other_brands']);
  						if (!empty($other)) {
  							$good['other_brands'] = explode(', ', $other);
+ 							foreach ($good['other_brands'] as $brand) {
+ 								$brands[] = $brand;
+ 							}
  						}
  						$fname = str_replace(' ', '_', $good['title_alias']);
  						$fname = str_replace('/', '+', $fname) . '.pdf';
- 						
- 						$good['file'] = '/contents/production/' . $fname;
+ 						$file = '/contents/production/' . $fname;
+				
+						$good['file'] = 'none';;
+						if (is_file(ltrim($file, '/'))) {
+							$good['file'] = $file;
+						}
  					}
 					
 					$second['goods'] = $goods;
 				}
 			}
 		}
+		
+		$brands = array_unique($brands);
+		
 		//$this->_help->arrayTrans($items);
+		//$this->_help->arrayTrans($brands);
 		
 		$this->view->tree = json_encode($items);
+		$this->view->autocomplete = $brands;
 	}
 	
 	public function categoryAction()
