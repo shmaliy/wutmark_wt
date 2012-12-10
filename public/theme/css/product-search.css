@@ -28,7 +28,7 @@
 .search_form .title {
 	float:left;
 	white-space: nowrap;
-	font-size:20px;
+	font-size:16px;
 	color:#fff;
 	padding:5px 15px 0 0;
 	width:137px;
@@ -171,7 +171,7 @@
 	width: 91px;
 	padding: 0;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 16px;
 	color: #fff;
 	font-weight:bold;
 	background-color: #a7b2b9;

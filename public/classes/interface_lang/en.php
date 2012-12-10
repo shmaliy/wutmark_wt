@@ -29,12 +29,12 @@ define('CUSTOMER_SUPPORT_INDEX_TITLE', 'Do you have questions?');
 define('CUSTOMER_SUPPORT_INDEX_TEXT', 'You can contact us using the  <a href="/*lang*/contacts">contact details</a> of our company in your own or your nearest country
 or ask a question via <a href="/*lang*/contacts">feedback form</a>.');
 
-define('SEARCH_TITLE', 'Подбор материала по номенклатуре других производителей');
-
-define('SEARCH_MARC', 'Введите марку');
-define('SEARCH_BUTTON', 'Поиск');
-define('SEARCH_SETTINGS', 'Настройки поиска');
-define('SEARCH_MATERIAL', 'Материал');
-define('SEARCH_TARGET', 'Назначение');
-define('SEARCH_SELECT_MATERIAL', 'Выберите материал');
-define('SEARCH_SELECT_TARGET', 'Выберите назначение');
+define('SEARCH_TITLE', 'Matching of material for the nomenclature of other producers');
+ 
+define('SEARCH_MARC', 'Enter grade');
+define('SEARCH_BUTTON', 'Search');
+define('SEARCH_SETTINGS', 'Search settings');
+define('SEARCH_MATERIAL', 'Material');
+define('SEARCH_TARGET', 'Application');
+define('SEARCH_SELECT_MATERIAL', 'Choose the material');
+define('SEARCH_SELECT_TARGET', 'Choose application');
